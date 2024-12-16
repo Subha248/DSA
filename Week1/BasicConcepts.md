@@ -1,6 +1,9 @@
-/*Write a program that takes an integer, then a string, then a char from the user and prints them in the screen.
 
+### Problem 2
 
+Write a program that takes an integer, then a string, then a char from the user and prints them in the screen.
+
+``` plaintext
 Input:  2 Name y
 
 Expected Output:
@@ -9,7 +12,8 @@ Expected Output:
 
 Name
 
-y  */ 
+y
+```
 
 
 ``` java
