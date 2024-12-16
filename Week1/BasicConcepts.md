@@ -149,6 +149,109 @@ Triangle cannot be formed
 ```
 Triangle can be formed
 ```
+### Prob 3: 
+```plainnext
+Given mark of student, Print the Grade
+
+Grade A if mark is greater than or equal to 90
+
+Grade B if mark is greater than or equal to 80
+
+Grade C if mark if greater than or equal to 60
+
+Grade D if mark if greaer than or equal to 35
+
+Fail if mark is lesser than 35
+
+Input: 95
+
+Expected Output:
+
+Grade A
+
+Explanation: Here 95 is greater than or equal to 90 so its Grade A
+
+```
+Here’s the program to calculate and print the grade based on the student’s mark:
+
+```java
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int mark = scan.nextInt();
+
+        if (mark >= 90) {
+            System.out.println("Grade A");
+        } else if (mark >= 80) {
+            System.out.println("Grade B");
+        } else if (mark >= 60) {
+            System.out.println("Grade C");
+        } else if (mark >= 35) {
+            System.out.println("Grade D");
+        } else {
+            System.out.println("Fail");
+        }
+    }
+}
+```
+
+---
+
+### Explanation:
+
+1. **Input**:
+   - The program takes an integer input (`mark`) from the user.
+
+2. **Conditions**:
+   - Checks the range of the mark and assigns a grade based on the specified criteria:
+     - `mark >= 90` → Grade A
+     - `mark >= 80` → Grade B
+     - `mark >= 60` → Grade C
+     - `mark >= 35` → Grade D
+     - `mark < 35` → Fail
+
+3. **Output**:
+   - Prints the corresponding grade.
+
+---
+
+### Input/Output Examples:
+
+#### Input:
+```
+95
+```
+
+#### Output:
+```
+Grade A
+```
+
+---
+
+#### Input:
+```
+75
+```
+
+#### Output:
+```
+Grade C
+```
+
+---
+
+#### Input:
+```
+30
+```
+
+#### Output:
+```
+Fail
+```
 
 
 
