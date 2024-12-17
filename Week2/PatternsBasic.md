@@ -68,3 +68,65 @@ class Main {
 ---
 
 This program is the basic logic for **pattern printing** and can be modified to create various shapes like triangles, pyramids, etc.
+
+
+### Code:
+```java
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+---
+
+### Explanation:
+1. **Input**:  
+   - Takes an integer `n` as input.
+
+2. **Nested Loops**:
+   - Outer loop → Runs `n` times for `n` rows.
+   - Inner loop → Prints numbers from `1` to `n` on each row.
+
+3. **Output**:
+   - Prints a square pattern of numbers.
+
+---
+
+### Example Input/Output:
+
+#### Input:
+```
+3
+```
+
+#### Output:
+```
+123
+123
+123
+```
+
+#### Input:
+```
+4
+```
+
+#### Output:
+```
+1234
+1234
+1234
+1234
+```
