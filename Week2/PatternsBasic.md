@@ -1,3 +1,4 @@
+### Example 1
 This program is a **pattern printing program** in Java. It prints a rectangular block of `*` (asterisks) for a given value of `n` (rows and columns).
 
 ---
@@ -69,8 +70,8 @@ class Main {
 
 This program is the basic logic for **pattern printing** and can be modified to create various shapes like triangles, pyramids, etc.
 
-
-### Code:
+### Example 2:
+Code:
 ```java
 import java.util.Scanner;
 
