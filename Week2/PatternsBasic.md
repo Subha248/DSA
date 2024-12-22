@@ -131,3 +131,42 @@ class Main {
 1234
 1234
 ```
+### Example 3
+
+Write a Java program to print a number triangle with `N` rows. For example, if `N = 4`, the output should be:
+
+```
+1
+12
+123
+1234
+```
+
+```java
+public class Main {
+  public static void main(String[] args) {
+    int N = 15; // Total rows
+    for (int i = 1; i <= N; i++) { // Loop through rows
+      for (int j = 1; j <= i; j++) { // Print numbers from 1 to the current row number
+        System.out.print(j);
+      }
+      System.out.println(); // Move to the next line after each row
+    }
+  }
+}
+```
+
+### Simplified Explanation:
+1. **Outer loop (`i`)**: Runs from `1` to `N` (15 rows).
+2. **Inner loop (`j`)**: Prints numbers from `1` to the current row (`i`).
+3. **Output**: Creates a triangle pattern of numbers.
+
+Example for `N = 4`:
+```
+1
+12
+123
+1234
+``` 
+
+This is a simple program to print a triangular number pattern.
