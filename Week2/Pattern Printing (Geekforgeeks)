@@ -1,0 +1,78 @@
+### Question 1:
+Given a number `N`, write a Java program to print a series of asterisks (`*`) in increasing order, separated by spaces. For each term, the number of asterisks should match the term number.  
+
+For example:
+- **Input**: `N = 3`  
+- **Output**: `* ** ***`  
+
+---
+
+### Code:
+
+```java
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in); // Create a scanner object for input
+    int N = scan.nextInt(); // Read the input number N
+
+    for (int i = 1; i <= N; i++) { // Outer loop: controls the groups of asterisks
+      for (int j = 1; j <= i; j++) { // Inner loop: prints i asterisks in each group
+        System.out.print("*");
+      }
+      System.out.print(" "); // Add a space after each group of asterisks
+    }
+  }
+}
+```
+
+---
+
+### Explanation:
+1. **Input Reading**:  
+   - `int N = scan.nextInt();`  
+   Reads the number `N`, which determines how many groups of asterisks will be printed.
+
+2. **Outer Loop (`i`)**:  
+   - `for (int i = 1; i <= N; i++)`  
+   The outer loop runs `N` times and controls the number of groups. For each iteration, a new group of `i` asterisks is printed.
+
+3. **Inner Loop (`j`)**:  
+   - `for (int j = 1; j <= i; j++)`  
+   The inner loop runs `i` times and prints `i` asterisks.  
+   Example:
+   - For `i = 1`, it prints 1 `*`.
+   - For `i = 2`, it prints 2 `*`.
+   - For `i = 3`, it prints 3 `*`.
+
+4. **Space After Each Group**:  
+   - `System.out.print(" ");`  
+   Adds a space after each group of asterisks, ensuring all groups are printed on the same line.
+
+5. **Output**:  
+   All groups of asterisks are printed on the same line, separated by spaces.
+
+---
+
+### Example Input and Output:
+
+#### Input:
+```
+N = 3
+```
+
+#### Output:
+```
+* ** ***
+```
+
+#### Input:
+```
+N = 5
+```
+
+#### Output:
+```
+* ** *** **** *****
+```
