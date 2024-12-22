@@ -26,16 +26,34 @@ public class Main {
   }
 }
 ```
+### Explanation:
+
+1. **Input:**  
+   - Read `N`, which is the number of terms to print.
+
+2. **Outer Loop (`i`):**  
+   - Runs from `1` to `N`.  
+   - Controls the number of groups of asterisks to print.
+
+3. **Inner Loop (`j`):**  
+   - Runs from `1` to `i`.  
+   - Prints `i` asterisks in each group.
+
+4. **Space:**  
+   - After printing each group of asterisks, a space is added to separate the groups.
 
 ---
 
-### Example:
-**Input:**  
-```
-N = 4
-```
+**Example Walkthrough (N = 3):**  
+- For `i = 1`, print `*`.  
+- For `i = 2`, print `**`.  
+- For `i = 3`, print `***`.  
+- Add a space after each group.  
 
 **Output:**  
 ```
-* ** *** ****
+* ** ***
 ```
+---
+
+
