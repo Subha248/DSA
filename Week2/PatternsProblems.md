@@ -160,3 +160,68 @@ This program prints an inverted triangle of stars (\(*\)) based on user input \(
 
 It prints \(N\) stars in the first row, then decreases by one star in each subsequent row.
 ```
+
+
+### Sample 2
+
+**Input**:
+```
+n = 6
+```
+
+**Output**:
+```
+******
+*****
+****
+***
+**
+*
+```
+
+---
+
+### Code
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in); // Create Scanner object for user input
+        System.out.print("Enter the value of n: "); // Prompt for input
+        int N = scan.nextInt(); // Take user input for n
+        
+        for (int i = 1; i <= N; i++) { // Outer loop for rows
+            for (int j = 1; j <= N - i + 1; j++) { // Inner loop for stars
+                System.out.print("*");
+            }
+            System.out.println(""); // Move to the next row
+        }
+        scan.close(); // Close Scanner to prevent resource leak
+    }
+}
+```
+
+---
+
+### Explanation
+
+1. **Input**:  
+   - The program takes a number \( n \) as input from the user.
+2. **Logic**:  
+   - The outer loop (`for (int i = 1; i <= N; i++)`) controls the number of rows.  
+   - The inner loop (`for (int j = 1; j <= N - i + 1; j++)`) controls the number of stars (\(*\)) in each row.  
+   - As the row number increases, the number of stars decreases.
+3. **Output**:  
+   - The program prints \( n \) stars in the first row, \( n-1 \) in the second, and so on until the last row contains 1 star.
+
+---
+
+### Tips for GitHub Markdown:
+
+- Use `###` for headers (e.g., `### Sample 2`).
+- Use backticks (```) for code blocks. Start and end code sections with three backticks followed by the language (e.g., ` ```java ` for Java code).
+- Use double asterisks (`**`) for bold text.
+- Use a blank line between sections for proper formatting.
+
+Copy and paste the above text into your GitHub markdown file or README.md, and it should render perfectly!
