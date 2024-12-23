@@ -151,32 +151,30 @@ This program prints an inverted triangle of stars (\(*\)) based on user input \(
 ### Example:
 **Input**: `4`  
 **Output**:
-```
+```plaintext
 ****
 ***
 **
 *
 ``` 
 
-It prints \(N\) stars in the first row, then decreases by one star in each subsequent row.
-
-
 
 ### Sample 2
-
+```plaintext
 **Input**:
 ```
 n = 6
 ```
 ---
 **Output**:
+```plaintext
 ******
 *****
 ****
 ***
 **
 *
-
+```
 
 ### Code
 ```java
@@ -202,7 +200,7 @@ public class Main {
 ---
 
 ### Explanation
-
+```plaintext
 1. **Input**:  
    - The program takes a number \( n \) as input from the user.
 2. **Logic**:  
