@@ -121,32 +121,42 @@ n = 4
 ### Code:
 ```java
 
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
-        int N = 4;
-        for (int i = 1; i <= N; i++) {
-            for (int j = 1; j <= N - i + 1; j++) {
-                System.out.print("*");
-            }
-            System.out.println(""); // Move to the next row
+      Scanner scan=new  Scanner(System.in);
+      int N= scan.nextInt();
+      for(int i=1;i<=N;i++){
+        for(int j=1;j<=N-i+1;j++){
+          System.out.print("*");
         }
-    }
+      
+      System.out.println("");
+      }
+  }
 }
 ```
 
 ---
 
-### Explanation:
-This program prints an inverted right-angled triangle of stars (\(*\)) for a given size \(N\):
+This program prints an inverted triangle of stars (\(*\)) based on user input \(N\).
 
-1. **Outer Loop**: Controls the number of rows, iterating from 1 to \(N\).
-2. **Inner Loop**: Prints \(N - i + 1\) stars in each row, where \(i\) is the current row number.
-3. **Line Break**: After printing stars for the current row, moves to the next line.
+### Steps:
+1. **Input**: User enters a number \(N\) (size of the triangle).
+2. **Outer Loop**: Runs \(N\) times (for each row).
+3. **Inner Loop**: Prints \(N - i + 1\) stars in each row, decreasing as rows increase.
+4. **Line Break**: Moves to the next row after printing stars.
 
-**Output for \(N = 4\):**
-```plaintext
+### Example:
+**Input**: `4`  
+**Output**:
+```
 ****
 ***
 **
 *
+``` 
+
+It prints \(N\) stars in the first row, then decreases by one star in each subsequent row.
 ```
