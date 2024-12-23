@@ -159,7 +159,7 @@ This program prints an inverted triangle of stars (\(*\)) based on user input \(
 ``` 
 
 It prints \(N\) stars in the first row, then decreases by one star in each subsequent row.
-```
+
 
 
 ### Sample 2
@@ -168,18 +168,15 @@ It prints \(N\) stars in the first row, then decreases by one star in each subse
 ```
 n = 6
 ```
-
+---
 **Output**:
-```
 ******
 *****
 ****
 ***
 **
 *
-```
 
----
 
 ### Code
 ```java
@@ -217,11 +214,4 @@ public class Main {
 
 ---
 
-### Tips for GitHub Markdown:
 
-- Use `###` for headers (e.g., `### Sample 2`).
-- Use backticks (```) for code blocks. Start and end code sections with three backticks followed by the language (e.g., ` ```java ` for Java code).
-- Use double asterisks (`**`) for bold text.
-- Use a blank line between sections for proper formatting.
-
-Copy and paste the above text into your GitHub markdown file or README.md, and it should render perfectly!
