@@ -97,4 +97,56 @@ public class Main {
 2. **Inner Loop** (`for (int j = 1; j <= N - i + 1; j++)`): Prints numbers from 1 to \(N - i + 1\) for each row. As \(i\) increases, the number of columns decreases.
 3. **Line Break** (`System.out.println("")`): Moves to the next line after printing each row.
 
+Here’s a clean, copy-paste-ready format for your GitHub:
 
+---
+
+### Sample 1:
+
+**Input:**
+```plaintext
+n = 4
+```
+
+**Expected Output:**
+```plaintext
+****
+***
+**
+*
+```
+
+---
+
+### Code:
+```java
+
+public class Main {
+    public static void main(String[] args) {
+        int N = 4;
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= N - i + 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println(""); // Move to the next row
+        }
+    }
+}
+```
+
+---
+
+### Explanation:
+This program prints an inverted right-angled triangle of stars (\(*\)) for a given size \(N\):
+
+1. **Outer Loop**: Controls the number of rows, iterating from 1 to \(N\).
+2. **Inner Loop**: Prints \(N - i + 1\) stars in each row, where \(i\) is the current row number.
+3. **Line Break**: After printing stars for the current row, moves to the next line.
+
+**Output for \(N = 4\):**
+```plaintext
+****
+***
+**
+*
+```
