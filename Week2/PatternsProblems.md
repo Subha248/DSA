@@ -365,3 +365,102 @@ Enter the number of rows (n): 5
   2. A decreasing triangle using another nested loop.
 - It's well-structured and handles any input size \(n\).
 
+  Here’s the formatted explanation and code for your GitHub documentation:
+
+---
+
+### Problem 4: Print a Centered Triangle Pattern
+
+**Task**:  
+Given an integer \( n \), print a centered triangle pattern with \( n \) rows. For each row, stars (\(*\)) are aligned in the center, and the number of stars increases as the row number increases.
+
+---
+
+### Example Input and Output
+
+**Input**:
+```
+n = 5
+```
+
+**Output**:
+```
+    *
+   ***
+  *****
+ *******
+*********
+```
+
+---
+
+### Code:
+```java
+class Solution {
+    void printTriangle(int n) {
+        // Outer loop for rows
+        for (int i = 1; i <= n; i++) {
+            // Print spaces
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print("*");
+            }
+            // Move to the next row
+            System.out.println();
+        }
+    }
+}
+```
+
+---
+
+### Explanation:
+
+1. **Outer Loop**:
+   - `for (int i = 1; i <= n; i++)`: Controls the rows of the triangle. Each iteration corresponds to one row.
+
+2. **Space Loop**:
+   - `for (int j = 1; j <= n - i; j++)`: Prints spaces to align the stars in the center. The number of spaces decreases as `i` increases.
+
+3. **Star Loop**:
+   - `for (int j = 1; j <= 2 * i - 1; j++)`: Prints the stars for each row. The number of stars follows the formula \(2 \times i - 1\), which increases with each row.
+
+4. **Line Break**:
+   - `System.out.println();`: Moves to the next line after printing all spaces and stars for the current row.
+
+---
+
+### Example Walkthrough for \(n = 5\):
+
+1. **Row 1**:
+   - Spaces: \(n - i = 5 - 1 = 4\) → `"    "`
+   - Stars: \(2 \times 1 - 1 = 1\) → `"*"`
+   - Output: `"    *"`
+
+2. **Row 2**:
+   - Spaces: \(n - i = 5 - 2 = 3\) → `"   "`
+   - Stars: \(2 \times 2 - 1 = 3\) → `"***"`
+   - Output: `"   ***"`
+
+3. **Row 3**:
+   - Spaces: \(n - i = 5 - 3 = 2\) → `"  "`
+   - Stars: \(2 \times 3 - 1 = 5\) → `"*****"`
+   - Output: `"  *****"`
+
+4. **Row 4**:
+   - Spaces: \(n - i = 5 - 4 = 1\) → `" "`
+   - Stars: \(2 \times 4 - 1 = 7\) → `"*******"`
+   - Output: `" *******"`
+
+5. **Row 5**:
+   - Spaces: \(n - i = 5 - 5 = 0\) → `""`
+   - Stars: \(2 \times 5 - 1 = 9\) → `"*********"`
+   - Output: `"*********"`
+
+---
+
+
+
