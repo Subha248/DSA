@@ -219,12 +219,13 @@ public class Main {
    - The program prints \( n \) stars in the first row, \( n-1 \) in the second, and so on until the last row contains 1 star.
 
 ---
+
 ---
 
-### Problem 3:
-Print a star pattern that first increases row by row up to \(n\), then decreases back to 1 row. For \(n = 5\), the output is:
+### Problem Statement 3:
+You are tasked with building a star pattern that first increases row by row up to \(n\) rows, then decreases back to 1 row. For \(n = 5\), the pattern should look like this:
 
-**Example Output**:
+**Expected Output**:
 ```
 * 
 * * 
@@ -239,32 +240,33 @@ Print a star pattern that first increases row by row up to \(n\), then decreases
 
 ---
 
-### Code:
+### Full Code:
 ```java
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
+        Scanner scan = new Scanner(System.in); // Create Scanner object for input
+        System.out.print("Enter the number of rows (n): ");
+        int n = scan.nextInt(); // Take input for n
 
-        // Increasing Triangle
+        // First Loop: Create the increasing triangle
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= i; j++) {
                 System.out.print("* ");
             }
-            System.out.println("");
+            System.out.println(""); // Move to the next row
         }
 
-        // Decreasing Triangle
+        // Second Loop: Create the decreasing triangle
         for (int i = 2; i <= n; i++) {
             for (int j = 1; j <= n - i + 1; j++) {
                 System.out.print("* ");
             }
-            System.out.println("");
+            System.out.println(""); // Move to the next row
         }
 
-        scan.close();
+        scan.close(); // Close Scanner to avoid resource leak
     }
 }
 ```
@@ -273,34 +275,48 @@ public class Main {
 
 ### Explanation:
 
-1. **Input**: The program reads \(n\) (number of rows).
-2. **First Loop**: Prints an increasing triangle:
-   - Row 1: 1 star, Row 2: 2 stars, ..., Row \(n\): \(n\) stars.
-3. **Second Loop**: Prints a decreasing triangle:
-   - Starts at 1 star less than the last row and decreases to 1 star.
+1. **Input**:
+   - The program prompts the user to enter the number of rows (\(n\)) for the pattern.
+
+2. **First Loop (Increasing Triangle)**:
+   ```java
+   for (int i = 1; i <= n; i++) {
+       for (int j = 1; j <= i; j++) {
+           System.out.print("* ");
+       }
+       System.out.println("");
+   }
+   ```
+   - The outer loop controls the rows for the upper (increasing) triangle.
+   - The inner loop prints \(i\) stars for each row.
+   - A line break is added after each row.
+
+3. **Second Loop (Decreasing Triangle)**:
+   ```java
+   for (int i = 2; i <= n; i++) {
+       for (int j = 1; j <= n - i + 1; j++) {
+           System.out.print("* ");
+       }
+       System.out.println("");
+   }
+   ```
+   - The outer loop starts at row 2 (to avoid repeating the middle row) and continues until \(n\).
+   - The inner loop prints decreasing stars for each row: \(n - i + 1\) stars.
+   - A line break is added after each row.
+
+4. **Line Break**:
+   - The `System.out.println("")` ensures that stars in each row are printed on a new line.
+
 ---
 
-### First Loop (Increasing Triangle):
+### Example Walkthrough for \(n = 5\):
 
-1. **Row 1**: 1 star (\(i = 1\)).
-2. **Row 2**: 2 stars (\(i = 2\)).
-3. **Row 3**: 3 stars (\(i = 3\)).
-4. **Row 4**: 4 stars (\(i = 4\)).
-5. **Row 5**: 5 stars (\(i = 5\)).
+**Input**:
+```
+Enter the number of rows (n): 5
+```
 
----
-
-### Second Loop (Decreasing Triangle):
-
-1. **Row 1**: 4 stars (\(i = 2\), \(j = 1, 2, 3, 4\)).
-2. **Row 2**: 3 stars (\(i = 3\), \(j = 1, 2, 3\)).
-3. **Row 3**: 2 stars (\(i = 4\), \(j = 1, 2\)).
-4. **Row 4**: 1 star (\(i = 5\), \(j = 1\)).
-
-
----
-
-### Example Output for \(n = 5\):
+**Output**:
 ```
 * 
 * * 
@@ -311,11 +327,24 @@ public class Main {
 * * *
 * *
 *
-``` 
+```
 
-This structure combines your format with the code and output for clear documentation.
+- **First Loop**:
+  - Row 1: 1 star (\(i = 1\)).
+  - Row 2: 2 stars (\(i = 2\)).
+  - Row 3: 3 stars (\(i = 3\)).
+  - Row 4: 4 stars (\(i = 4\)).
+  - Row 5: 5 stars (\(i = 5\)).
 
-**Output for \(n = 5\):**
+- **Second Loop**:
+  - Row 1: 4 stars (\(i = 2\), \(j = 1, 2, 3, 4\)).
+  - Row 2: 3 stars (\(i = 3\), \(j = 1, 2, 3\)).
+  - Row 3: 2 stars (\(i = 4\), \(j = 1, 2\)).
+  - Row 4: 1 star (\(i = 5\), \(j = 1\)).
+
+---
+
+### Final Output for \(n = 5\):
 ```
 * 
 * * 
@@ -326,5 +355,13 @@ This structure combines your format with the code and output for clear documenta
 * * *
 * *
 *
-``` 
+```
+
+---
+
+### Summary:
+- The program builds the pattern in two steps:
+  1. An increasing triangle using a nested loop.
+  2. A decreasing triangle using another nested loop.
+- It's well-structured and handles any input size \(n\).
 
