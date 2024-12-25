@@ -219,12 +219,112 @@ public class Main {
    - The program prints \( n \) stars in the first row, \( n-1 \) in the second, and so on until the last row contains 1 star.
 
 ---
+---
 
-### Tips for GitHub Markdown:
+### Problem 3:
+Print a star pattern that first increases row by row up to \(n\), then decreases back to 1 row. For \(n = 5\), the output is:
 
-- Use `###` for headers (e.g., `### Sample 2`).
-- Use backticks (```) for code blocks. Start and end code sections with three backticks followed by the language (e.g., ` ```java ` for Java code).
-- Use double asterisks (`**`) for bold text.
-- Use a blank line between sections for proper formatting.
+**Example Output**:
+```
+* 
+* * 
+* * * 
+* * * * 
+* * * * *
+* * * *
+* * *
+* *
+*
+```
 
-Copy and paste the above text into your GitHub markdown file or README.md, and it should render perfectly!
+---
+
+### Code:
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+
+        // Increasing Triangle
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println("");
+        }
+
+        // Decreasing Triangle
+        for (int i = 2; i <= n; i++) {
+            for (int j = 1; j <= n - i + 1; j++) {
+                System.out.print("* ");
+            }
+            System.out.println("");
+        }
+
+        scan.close();
+    }
+}
+```
+
+---
+
+### Explanation:
+
+1. **Input**: The program reads \(n\) (number of rows).
+2. **First Loop**: Prints an increasing triangle:
+   - Row 1: 1 star, Row 2: 2 stars, ..., Row \(n\): \(n\) stars.
+3. **Second Loop**: Prints a decreasing triangle:
+   - Starts at 1 star less than the last row and decreases to 1 star.
+---
+
+### First Loop (Increasing Triangle):
+
+1. **Row 1**: 1 star (\(i = 1\)).
+2. **Row 2**: 2 stars (\(i = 2\)).
+3. **Row 3**: 3 stars (\(i = 3\)).
+4. **Row 4**: 4 stars (\(i = 4\)).
+5. **Row 5**: 5 stars (\(i = 5\)).
+
+---
+
+### Second Loop (Decreasing Triangle):
+
+1. **Row 1**: 4 stars (\(i = 2\), \(j = 1, 2, 3, 4\)).
+2. **Row 2**: 3 stars (\(i = 3\), \(j = 1, 2, 3\)).
+3. **Row 3**: 2 stars (\(i = 4\), \(j = 1, 2\)).
+4. **Row 4**: 1 star (\(i = 5\), \(j = 1\)).
+
+
+---
+
+### Example Output for \(n = 5\):
+```
+* 
+* * 
+* * * 
+* * * * 
+* * * * *
+* * * *
+* * *
+* *
+*
+``` 
+
+This structure combines your format with the code and output for clear documentation.
+
+**Output for \(n = 5\):**
+```
+* 
+* * 
+* * * 
+* * * * 
+* * * * *
+* * * *
+* * *
+* *
+*
+``` 
+
