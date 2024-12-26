@@ -577,8 +577,6 @@ public class Main {
 
 ---
 
-### Summary:
-This program dynamically generates an inverted pyramid pattern based on the input \(n\). It's efficient, well-structured, and easy to understand. Perfect for learning or reference!
 
 
 
