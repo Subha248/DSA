@@ -461,6 +461,124 @@ class Solution {
    - Output: `"*********"`
 
 ---
+---
+
+### Problem 5: Print an Inverted Pyramid Pattern
+
+**Task**:  
+Given an integer \(n\), print an inverted pyramid pattern with \(n\) rows. The pattern consists of spaces followed by stars (\(*\)), and the number of stars decreases row by row.
+
+---
+
+### Example Input and Output:
+
+**Input**:
+```
+5
+```
+
+**Output**:
+```
+*********
+ *******
+  *****
+   ***
+    *
+```
+
+---
+
+### Code:
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        for (int i = 1; i <= n; i++) {
+            // Print spaces
+            for (int j = 1; j <= i - 1; j++) {
+                System.out.print(" ");
+            }
+
+            // Print stars
+            for (int j = 1; j <= (2 * n) - (2 * i - 1); j++) {
+                System.out.print("*");
+            }
+
+            // Move to the next line
+            System.out.println();
+        }
+    }
+}
+```
+
+---
+
+### Explanation:
+
+1. **Outer Loop**:
+   - `for (int i = 1; i <= n; i++)`: Controls the number of rows in the pyramid.
+   - \(i\) is the current row number.
+
+2. **First Inner Loop (Spaces)**:
+   - `for (int j = 1; j <= i - 1; j++)`: Prints spaces before the stars in each row.
+   - The number of spaces increases with the row number.
+
+3. **Second Inner Loop (Stars)**:
+   - `for (int j = 1; j <= (2 * n) - (2 * i - 1); j++)`: Prints stars. The number of stars decreases with each row:
+     - Row 1: \(2n - 1\) stars.
+     - Row 2: \(2n - 3\) stars.
+     - Row \(i\): \(2n - (2i - 1)\) stars.
+
+4. **Line Break**:
+   - `System.out.println();`: Moves the cursor to the next line after printing all spaces and stars for a row.
+
+---
+
+### Walkthrough for \(n = 5\):
+
+1. **Row 1**:
+   - Spaces: \(i - 1 = 1 - 1 = 0\) → `""`
+   - Stars: \((2 \times 5) - (2 \times 1 - 1) = 9\) → `"*********"`
+   - Output: `"*********"`
+
+2. **Row 2**:
+   - Spaces: \(i - 1 = 2 - 1 = 1\) → `" "`
+   - Stars: \((2 \times 5) - (2 \times 2 - 1) = 7\) → `"*******"`
+   - Output: `" *******"`
+
+3. **Row 3**:
+   - Spaces: \(i - 1 = 3 - 1 = 2\) → `"  "`
+   - Stars: \((2 \times 5) - (2 \times 3 - 1) = 5\) → `"*****"`
+   - Output: `"  *****"`
+
+4. **Row 4**:
+   - Spaces: \(i - 1 = 4 - 1 = 3\) → `"   "`
+   - Stars: \((2 \times 5) - (2 \times 4 - 1) = 3\) → `"***"`
+   - Output: `"   ***"`
+
+5. **Row 5**:
+   - Spaces: \(i - 1 = 5 - 1 = 4\) → `"    "`
+   - Stars: \((2 \times 5) - (2 \times 5 - 1) = 1\) → `"*"`
+   - Output: `"    *"`
+
+---
+
+### Complexity:
+
+1. **Time Complexity**: \(O(n^2)\)
+   - Outer loop runs \(n\) times.
+   - Inner loops for spaces and stars combined run approximately \(n^2 / 2\) iterations.
+
+2. **Space Complexity**: \(O(1)\)
+   - No additional data structures are used.
+
+---
+
+### Summary:
+This program dynamically generates an inverted pyramid pattern based on the input \(n\). It's efficient, well-structured, and easy to understand. Perfect for learning or reference!
 
 
 
