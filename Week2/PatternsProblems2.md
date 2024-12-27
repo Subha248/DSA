@@ -1,4 +1,4 @@
-### Question:
+### Question 1:
 
 **Print a Diamond Pattern**
 
@@ -123,4 +123,3 @@ public class Main {
     * 
 ```
 
-This code will produce the desired diamond pattern for any positive integer \( n \). Let me know if you need further clarification!
