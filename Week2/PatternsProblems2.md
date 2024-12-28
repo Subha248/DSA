@@ -123,3 +123,128 @@ public class Main {
     * 
 ```
 
+
+## **Question 2:**
+
+Write a program in Java to print a triangular pattern of numbers.  
+The triangle starts with `1` and increments sequentially, row by row, based on the number of rows entered by the user.
+
+### Example:
+For an input \( n = 5 \), the output should look like:
+```
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+```
+
+---
+
+## **Program**
+
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt(); // Input for number of rows
+        int count = 1; // Initialize count variable
+
+        for (int i = 1; i <= n; i++) { // Outer loop for rows
+            for (int j = 1; j <= i; j++) { // Inner loop for numbers in the row
+                System.out.print(count + " "); // Print the current number
+                count++; // Increment the count
+            }
+            System.out.println(); // Move to the next line after each row
+        }
+    }
+}
+```
+
+---
+
+## **Output**
+
+### Input:
+```
+5
+```
+
+### Output:
+```
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+```
+
+---
+
+## **Explanation**
+
+1. **Outer Loop (`i`)**: Controls the rows of the triangle.  
+   - Row 1 will have `1` number, Row 2 will have `2` numbers, and so on up to Row `n`.
+
+2. **Inner Loop (`j`)**: Controls how many numbers are printed in each row.  
+   - For Row `i`, it runs `i` times.
+
+3. **Counter (`count`)**: A variable to keep track of the current number to print.  
+   - Starts at `1` and increments after each number is printed.
+
+4. **Line Break (`System.out.println()`):** Ensures each row is printed on a new line.
+
+---
+
+## **Tracking `i`, `j`, and `count` in a Table**
+
+The following table shows how `i`, `j`, and `count` change as the program runs:
+
+| **Row (i)** | **Iteration (j)** | **Printed Value (count)** | **Next Value of count** |
+|-------------|-------------------|---------------------------|--------------------------|
+| 1           | 1                 | 1                         | 2                        |
+| 2           | 1                 | 2                         | 3                        |
+| 2           | 2                 | 3                         | 4                        |
+| 3           | 1                 | 4                         | 5                        |
+| 3           | 2                 | 5                         | 6                        |
+| 3           | 3                 | 6                         | 7                        |
+| 4           | 1                 | 7                         | 8                        |
+| 4           | 2                 | 8                         | 9                        |
+| 4           | 3                 | 9                         | 10                       |
+| 4           | 4                 | 10                        | 11                       |
+| 5           | 1                 | 11                        | 12                       |
+| 5           | 2                 | 12                        | 13                       |
+| 5           | 3                 | 13                        | 14                       |
+| 5           | 4                 | 14                        | 15                       |
+| 5           | 5                 | 15                        | 16                       |
+
+---
+
+## **Walkthrough Example:**
+
+### Input:
+```
+4
+```
+
+### Output:
+```
+1
+2 3
+4 5 6
+7 8 9 10
+```
+
+### Explanation for `n = 4`:
+
+- **Row 1:** Prints `1`, increments `count` to `2`.  
+- **Row 2:** Prints `2 3`, increments `count` to `4`.  
+- **Row 3:** Prints `4 5 6`, increments `count` to `7`.  
+- **Row 4:** Prints `7 8 9 10`, increments `count` to `11`.
+
+---
+
+
+
