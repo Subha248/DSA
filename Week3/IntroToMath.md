@@ -1,7 +1,7 @@
 
 ---
 
-## **Sample 1**
+## **Example 1**
 
 Write a program in Java to find the **last digit** of a given number.
 
