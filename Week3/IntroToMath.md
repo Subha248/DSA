@@ -1,8 +1,7 @@
-To find the last digit of a number in Java, you can use the **modulus operator (`%`)**, which gives the remainder of a division operation. Here's the content you can copy-paste into your GitHub repository:
 
 ---
 
-## **Question**
+## **Sample 1**
 
 Write a program in Java to find the **last digit** of a given number.
 
