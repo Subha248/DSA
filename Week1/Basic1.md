@@ -283,5 +283,145 @@ For input `10, 10, 5`:
 
 ---
 
-This content ensures clarity and ease of understanding for future reference. Let me know if you need further assistance! 🚀
+Let me break down the program into **blocks of logic** and explain step-by-step how it works with examples.
+
+---
+---
+**Question 3:** Write a program to check if a number is positive or negative, and if positive, determine if it is even or odd.
+
+### **Program**
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Enter number:");
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt(); // Input the number
+
+        // Block 1: Check if the number is positive
+        if (a > 0) {
+            // Block 2: Check if the number is even or odd
+            if (a % 2 == 0) {
+                System.out.println("Positive and even");
+            } else {
+                System.out.println("Positive and odd");
+            }
+        } 
+        // Block 3: If the number is not positive, it is negative
+        else {
+            System.out.println("Negative");
+        }
+    }
+}
+```
+
+---
+
+### **Explanation with Blocks and Examples**
+
+#### **Block 1: Check if the Number is Positive**
+
+```java
+if (a > 0) {
+    // Block 2 executes if this is true
+}
+else {
+    // Block 3 executes if this is false
+}
+```
+
+- If the number is **greater than 0**, the program moves to **Block 2** to check if it is even or odd.
+- If the number is **not greater than 0**, the program skips **Block 2** and goes to **Block 3**, printing `"Negative"`.
+
+---
+
+#### **Block 2: Check if the Number is Even or Odd**
+
+```java
+if (a % 2 == 0) {
+    System.out.println("Positive and even");
+} else {
+    System.out.println("Positive and odd");
+}
+```
+
+- If the number is divisible by `2` (`a % 2 == 0`), it prints `"Positive and even"`.
+- If not, it prints `"Positive and odd"`.
+
+---
+
+#### **Block 3: Handle Negative Numbers**
+
+```java
+else {
+    System.out.println("Negative");
+}
+```
+
+- If the number is not positive, the program prints `"Negative"` without checking if it’s even or odd (because negatives are not categorized like that here).
+
+---
+
+### **Example Walkthroughs**
+
+#### **Example 1: Input = 10**
+1. **Input:** `10`
+2. **Block 1:** `10 > 0` → **True**
+3. **Block 2:** `10 % 2 == 0` → **True** (10 is even).
+4. **Output:**
+   ```
+   Positive and even
+   ```
+
+---
+
+#### **Example 2: Input = 15**
+1. **Input:** `15`
+2. **Block 1:** `15 > 0` → **True**
+3. **Block 2:** `15 % 2 == 0` → **False** (15 is odd).
+4. **Output:**
+   ```
+   Positive and odd
+   ```
+
+---
+
+#### **Example 3: Input = -7**
+1. **Input:** `-7`
+2. **Block 1:** `-7 > 0` → **False**
+3. **Block 3:** The program skips Block 2 and directly prints `"Negative"`.
+4. **Output:**
+   ```
+   Negative
+   ```
+
+---
+
+### **Visual Summary**
+
+| **Input** | **Block 1 (a > 0)** | **Block 2 (a % 2 == 0)** | **Block 3** | **Output**            |
+|-----------|---------------------|--------------------------|-------------|-----------------------|
+| 10        | True                | True                     | Skipped     | Positive and even     |
+| 15        | True                | False                    | Skipped     | Positive and odd      |
+| -7        | False               | Skipped                  | True        | Negative              |
+| -4        | False               | Skipped                  | True        | Negative              |
+| 0         | False               | Skipped                  | True        | Negative              |
+
+---
+
+### **Why is This Program Simple and Effective?**
+
+1. **Blocks of Logic:**
+   - Separate checks for positivity and even/odd make the program easy to understand and maintain.
+
+2. **Efficiency:**
+   - Negative numbers skip the unnecessary even/odd check.
+   - Positive numbers directly proceed to even/odd classification.
+
+3. **Readability:**
+   - Nested conditions help group related checks (positive → even/odd).
+
+---
 
