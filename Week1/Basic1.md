@@ -283,11 +283,10 @@ For input `10, 10, 5`:
 
 ---
 
-Let me break down the program into **blocks of logic** and explain step-by-step how it works with examples.
 
 ---
 ---
-**Question 3:** Write a program to check if a number is positive or negative, and if positive, determine if it is even or odd.
+## **Question 3**: Write a program to check if a number is positive or negative, and if positive, determine if it is even or odd.
 
 ### **Program**
 
