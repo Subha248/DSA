@@ -269,5 +269,108 @@ For input `98765`:
 | 5             | 9                | 9                 | True                    | Print `9`          |
 
 ---
+---
 
+## **Question 4**
+
+Write a program in Java to count the number of digits in a given number using a `while` loop.
+
+---
+
+## **Program**
+
+```java
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Enter a number:");
+        int n = scan.nextInt(); // Input the number
+        int count = 0; // Initialize count to 0
+
+        while (n > 0) {
+            count = count + 1; // Increment count for each digit
+            n = n / 10; // Remove the last digit
+        }
+
+        System.out.println("Number of digits: " + count); // Print the count
+    }
+}
+```
+
+---
+
+## **Explanation**
+
+1. **`count = 0`:**
+   - A variable to keep track of the number of digits in the number.
+
+2. **`while (n > 0)`:**
+   - The loop continues as long as `n` is greater than `0`.
+
+3. **`count = count + 1`:**
+   - For each iteration, `count` is incremented to count the digits.
+
+4. **`n = n / 10`:**
+   - Dividing `n` by `10` removes the last digit of the number.
+
+5. **Output:**
+   - After the loop ends, `count` holds the total number of digits, which is printed to the console.
+
+---
+
+## **Output**
+
+### Example 1:
+**Input:**
+```
+1234
+```
+
+**Output:**
+```
+Number of digits: 4
+```
+
+---
+
+### Example 2:
+**Input:**
+```
+98765
+```
+
+**Output:**
+```
+Number of digits: 5
+```
+
+---
+
+## **Visualization Table**
+
+### **Input: `1234`**
+
+| **Iteration** | **Value of `n`** | **`count` (Before Increment)** | **`count` (After Increment)** | **Action Performed**  |
+|---------------|-------------------|-------------------------------|-------------------------------|-----------------------|
+| 1             | 1234             | 0                             | 1                             | `n = n / 10 → 123`   |
+| 2             | 123              | 1                             | 2                             | `n = n / 10 → 12`    |
+| 3             | 12               | 2                             | 3                             | `n = n / 10 → 1`     |
+| 4             | 1                | 3                             | 4                             | `n = n / 10 → 0`     |
+
+---
+
+### **Input: `98765`**
+
+| **Iteration** | **Value of `n`** | **`count` (Before Increment)** | **`count` (After Increment)** | **Action Performed**  |
+|---------------|-------------------|-------------------------------|-------------------------------|-----------------------|
+| 1             | 98765            | 0                             | 1                             | `n = n / 10 → 9876`  |
+| 2             | 9876             | 1                             | 2                             | `n = n / 10 → 987`   |
+| 3             | 987              | 2                             | 3                             | `n = n / 10 → 98`    |
+| 4             | 98               | 3                             | 4                             | `n = n / 10 → 9`     |
+| 5             | 9                | 4                             | 5                             | `n = n / 10 → 0`     |
+
+---
 
