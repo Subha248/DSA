@@ -171,5 +171,103 @@ class Main {
 
 ---
 
+---
+
+## **Question 3**
+
+Write a program in Java to find and print the **first digit** of a given number using a `while` loop.
+
+---
+
+## **Program**
+
+```java
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt(); // Read the input number
+
+        while (n > 0) { // Loop to process the digits
+            int fd = n % 10; // Extract the last digit
+            n = n / 10; // Remove the last digit
+            if (n == 0) // If no more digits remain
+                System.out.println(fd); // Print the first digit
+        }
+    }
+}
+```
+
+---
+
+## **Output**
+
+### Example 1:
+**Input:**
+```
+1234
+```
+
+**Output:**
+```
+1
+```
+
+---
+
+### Example 2:
+**Input:**
+```
+98765
+```
+
+**Output:**
+```
+9
+```
+
+---
+
+### Example 3:
+**Input:**
+```
+5
+```
+
+**Output:**
+```
+5
+```
+
+---
+
+## **Explanation**
+
+1. **Input Handling:**
+   - The program reads an integer `n` from the user using `Scanner`.
+
+2. **Logic to Find the First Digit:**
+   - The `while` loop extracts each digit of the number using `n % 10` and removes it using `n / 10`.
+   - When `n == 0` (i.e., no more digits are left), the last extracted digit (`fd`) is the **first digit** of the original number.
+
+3. **Output:**
+   - The program prints the first digit when the loop identifies that there are no more digits left.
+
+---
+
+## **Working Table**
+
+For input `98765`:
+
+| **Iteration** | **Value of `n`** | **`fd = n % 10`** | **Condition (`n == 0`)** | **Action**         |
+|---------------|-------------------|-------------------|--------------------------|--------------------|
+| 1             | 98765            | 5                 | False                   | Continue           |
+| 2             | 9876             | 6                 | False                   | Continue           |
+| 3             | 987              | 7                 | False                   | Continue           |
+| 4             | 98               | 8                 | False                   | Continue           |
+| 5             | 9                | 9                 | True                    | Print `9`          |
+
+---
 
 
