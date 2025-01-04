@@ -373,4 +373,95 @@ Number of digits: 5
 | 5             | 9                | 4                             | 5                             | `n = n / 10 → 0`     |
 
 ---
+### **Question: Analyze a Number for Even Digits and Print the Last Digit**
+Write a program in Java that:
+1. Counts how many even digits are in a given number.
+2. Prints the last digit when the number becomes a single digit.
+
+---
+
+### **Program**
+```java
+class Main {
+    public static void main(String[] args) {
+        int n = 23423573, count = 0; // Initialize the number and count 
+
+        while (n > 0) { 
+            int ld = n % 10; // Extract the last digit
+            if (ld % 2 == 0) { // Check if the digit is even
+                count = count + 1; // Increment count for even digits
+            }
+            if (n == ld) { // Check if the number becomes a single digit
+                System.out.println(ld); // Print the single digit
+            }
+            n = n / 10; // Remove the last digit
+        }
+
+        System.out.println(count); // Print the total count of even digits
+    }
+}
+```
+
+---
+
+### **Explanation**
+
+1. **Initialization**:
+   - `n = 23423573`: Input number.
+   - `count = 0`: Tracks the number of even digits.
+
+2. **Loop**:
+   - The `while` loop continues until `n > 0`.
+   - Extracts the last digit of `n` using `n % 10`.
+   - Checks if the last digit is even:
+     - If true, increments `count`.
+   - Checks if `n` is now a single digit (`n == ld`):
+     - If true, prints the digit.
+   - Reduces `n` by removing the last digit (`n = n / 10`).
+
+3. **Output**:
+   - Prints the single-digit value when `n` becomes a single digit.
+   - Prints the count of even digits.
+
+---
+
+### **Input and Output Example**
+
+#### Input:
+```
+n = 23423573
+```
+
+#### Output:
+```
+2
+3
+```
+
+---
+
+### **Detailed Execution**
+
+| **Iteration** | **Value of `n`** | **`ld` (Last Digit)** | **`ld % 2 == 0`** | **Action on `count`** | **New `n`** |
+|---------------|-------------------|-----------------------|-------------------|-----------------------|-------------|
+| 1             | 23423573         | 3                     | False            | `count = 0`          | 2342357     |
+| 2             | 2342357          | 7                     | False            | `count = 0`          | 234235      |
+| 3             | 234235           | 5                     | False            | `count = 0`          | 23423       |
+| 4             | 23423            | 3                     | False            | `count = 0`          | 2342        |
+| 5             | 2342             | 2                     | True             | `count = 1`          | 234         |
+| 6             | 234              | 4                     | True             | `count = 2`          | 23          |
+| 7             | 23               | 3                     | False            | `count = 2`          | 2           |
+| 8             | 2                | 2                     | True             | `count = 3`          | 0           |
+
+---
+
+### **Explanation of Output**
+1. **Last Digit:**
+   - When `n = 2` (single digit), the program prints `2`.
+
+2. **Count of Even Digits:**
+   - Total even digits in `23423573` are `2`, `4`, and `2`, so the count is `3`.
+
+---
+
 
