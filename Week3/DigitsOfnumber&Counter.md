@@ -108,4 +108,136 @@ Number of digits: 4
 ### **Output**
 - **Test Case 1:** `Number of digits: 6`
 - **Test Case 2:** `Number of digits: 4`
+  ---
+  Here’s the complete format for your GitHub reference, including the question, program, explanation, and test cases:
+
+---
+
+## Problem: Corner Digits Sum
+
+### Question 2:
+
+Given a number `N`, find the sum of the first and last digit of `N`.
+
+### Example 1:
+**Input:**
+```
+N = 12345
+```
+**Output:**
+```
+6
+```
+**Explanation:**  
+The first digit is `1` and the last digit is `5`. Their sum is `1 + 5 = 6`.
+
+### Example 2:
+**Input:**
+```
+N = 98562
+```
+**Output:**
+```
+11
+```
+**Explanation:**  
+The first digit is `9` and the last digit is `2`. Their sum is `9 + 2 = 11`.
+
+---
+
+### Code:
+
+```java
+// User function Template for Java
+class Solution {
+    public int corner_digitSum(int n) {
+        // Extract the last digit
+        int ld = n % 10;
+
+        // Variable to store the first digit
+        int fd = 0;
+
+        // Find the first digit using a loop
+        while (n > 0) {
+            fd = n % 10; // Extract the current digit
+            n = n / 10;  // Remove the last digit
+        }
+
+        // Return the sum of first and last digits
+        return fd + ld;
+    }
+}
+```
+
+---
+
+### Explanation:
+
+1. **Extract the Last Digit (`ld`):**
+   ```java
+   int ld = n % 10;
+   ```
+   - The last digit of `N` is extracted using the modulus operator `%`.
+
+2. **Find the First Digit (`fd`):**
+   ```java
+   while (n > 0) {
+       fd = n % 10;
+       n = n / 10;
+   }
+   ```
+   - The `while` loop iterates through all the digits of `N` by removing the last digit in each iteration (`n = n / 10`).
+   - The loop stops when `n` becomes `0`, leaving `fd` as the first digit.
+
+3. **Sum of First and Last Digits:**
+   ```java
+   return fd + ld;
+   ```
+   - Adds the first digit (`fd`) and the last digit (`ld`) and returns the result.
+
+---
+
+### Test Cases:
+
+#### Test Case 1:
+**Input:**
+```
+N = 12345
+```
+**Output:**
+```
+6
+```
+**Explanation:**
+- Last digit (`ld`) = 5.
+- First digit (`fd`) = 1.
+- Sum = `1 + 5 = 6`.
+
+---
+
+#### Test Case 2:
+**Input:**
+```
+N = 98562
+```
+**Output:**
+```
+11
+```
+**Explanation:**
+- Last digit (`ld`) = 2.
+- First digit (`fd`) = 9.
+- Sum = `9 + 2 = 11`.
+
+---
+
+### Complexity Analysis:
+
+- **Time Complexity:** \(O(\log_{10}(N))\)  
+  - The loop runs for the number of digits in `N`.
+- **Space Complexity:** \(O(1)\)  
+  - Uses a constant amount of extra space.
+
+---
+
 
