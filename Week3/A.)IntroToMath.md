@@ -373,95 +373,119 @@ Number of digits: 5
 | 5             | 9                | 4                             | 5                             | `n = n / 10 → 0`     |
 
 ---
-### **Question: Analyze a Number for Even Digits and Print the Last Digit**
+### **Question 5: Analyze a Number for Even Digits and Print the Last Digit**
 Write a program in Java that:
 1. Counts how many even digits are in a given number.
 2. Prints the last digit when the number becomes a single digit.
 
 ---
 
-### **Program**
-```java
-class Main {
-    public static void main(String[] args) {
-        int n = 23423573, count = 0; // Initialize the number and count 
+### **Program: Count Even Digits and Print the First Digit**
 
-        while (n > 0) { 
-            int ld = n % 10; // Extract the last digit
-            if (ld % 2 == 0) { // Check if the digit is even
-                count = count + 1; // Increment count for even digits
+```java
+/**
+ * Program to count the number of even digits in a number
+ * and print the first digit of the given number.
+ */
+import java.util.*;
+
+public class Main {
+    public static void main(String args[]) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = scan.nextInt(); // Input the number
+
+        int count = 0; // Variable to count even digits
+        int e = 0; // Variable to store the current digit (to later store the first digit)
+
+        // Loop to process each digit of the number
+        while (n > 0) {
+            e = n % 10; // Extract the last digit
+
+            // Check if the digit is even
+            if (e % 2 == 0) {
+                count++; // Increment the count of even digits
             }
-            if (n == ld) { // Check if the number becomes a single digit
-                System.out.println(ld); // Print the single digit
-            }
+
             n = n / 10; // Remove the last digit
         }
 
-        System.out.println(count); // Print the total count of even digits
+        // Print the results
+        System.out.println("Number of even digits: " + count);
+        System.out.println("First digit: " + e);
     }
 }
 ```
 
 ---
 
-### **Explanation**
+### **Explanation of the Code**
 
-1. **Initialization**:
-   - `n = 23423573`: Input number.
-   - `count = 0`: Tracks the number of even digits.
+1. **Input the Number:**
+   ```java
+   int n = scan.nextInt();
+   ```
+   - Takes an integer input from the user.
 
-2. **Loop**:
-   - The `while` loop continues until `n > 0`.
-   - Extracts the last digit of `n` using `n % 10`.
-   - Checks if the last digit is even:
-     - If true, increments `count`.
-   - Checks if `n` is now a single digit (`n == ld`):
-     - If true, prints the digit.
-   - Reduces `n` by removing the last digit (`n = n / 10`).
+2. **Initialization:**
+   ```java
+   int count = 0; // Counts the even digits
+   int e = 0;     // Stores the current digit, which will eventually hold the first digit
+   ```
 
-3. **Output**:
-   - Prints the single-digit value when `n` becomes a single digit.
-   - Prints the count of even digits.
+3. **Processing Digits:**
+   - The `while` loop continues until all digits are processed:
+     ```java
+     while (n > 0) {
+         e = n % 10; // Extract the last digit
+         if (e % 2 == 0) {
+             count++; // Increment if it's even
+         }
+         n = n / 10; // Remove the last digit
+     }
+     ```
 
----
-
-### **Input and Output Example**
-
-#### Input:
-```
-n = 23423573
-```
-
-#### Output:
-```
-2
-3
-```
-
----
-
-### **Detailed Execution**
-
-| **Iteration** | **Value of `n`** | **`ld` (Last Digit)** | **`ld % 2 == 0`** | **Action on `count`** | **New `n`** |
-|---------------|-------------------|-----------------------|-------------------|-----------------------|-------------|
-| 1             | 23423573         | 3                     | False            | `count = 0`          | 2342357     |
-| 2             | 2342357          | 7                     | False            | `count = 0`          | 234235      |
-| 3             | 234235           | 5                     | False            | `count = 0`          | 23423       |
-| 4             | 23423            | 3                     | False            | `count = 0`          | 2342        |
-| 5             | 2342             | 2                     | True             | `count = 1`          | 234         |
-| 6             | 234              | 4                     | True             | `count = 2`          | 23          |
-| 7             | 23               | 3                     | False            | `count = 2`          | 2           |
-| 8             | 2                | 2                     | True             | `count = 3`          | 0           |
+4. **Results:**
+   - After the loop ends, `e` holds the first digit, and `count` stores the number of even digits:
+     ```java
+     System.out.println("Number of even digits: " + count);
+     System.out.println("First digit: " + e);
+     ```
 
 ---
 
-### **Explanation of Output**
-1. **Last Digit:**
-   - When `n = 2` (single digit), the program prints `2`.
+### **Visualization**
 
-2. **Count of Even Digits:**
-   - Total even digits in `23423573` are `2`, `4`, and `2`, so the count is `3`.
+| **Step** | **n (Number)** | **e (Current Digit)** | **Even Check (e % 2 == 0)** | **Count** | **Remaining n** |
+|----------|-----------------|-----------------------|-----------------------------|-----------|-----------------|
+| Start    | `1234`          | -                     | -                           | `0`       | -               |
+| 1        | `1234`          | `4`                   | True                        | `1`       | `123`           |
+| 2        | `123`           | `3`                   | False                       | `1`       | `12`            |
+| 3        | `12`            | `2`                   | True                        | `2`       | `1`             |
+| 4        | `1`             | `1`                   | False                       | `2`       | `0`             |
 
 ---
 
+### **Example Input and Output**
+
+#### **Input:**
+```
+1234
+```
+
+#### **Output:**
+```
+Enter a number: 1234
+Number of even digits: 2
+First digit: 1
+```
+
+---
+
+### **How It Works**
+1. Each digit is processed using `n % 10`, which extracts the last digit.
+2. If the digit is even (`e % 2 == 0`), the `count` is incremented.
+3. The first digit is identified by updating `e` during each iteration of the loop. After the loop ends, `e` contains the first digit of the original number.
+
+---
 
