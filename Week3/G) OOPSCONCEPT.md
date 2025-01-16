@@ -1,6 +1,6 @@
 
 ---
-
+### ***1***:
 ### **Program:**
 ```java
 public class Human {
@@ -38,6 +38,7 @@ public class Human {
 ---
 This is a simple example of how to define a class, create an object, and access its attributes in Java. 
 
+### ***2***:
 ### **Program:**
 ```java
 class Human {
@@ -85,7 +86,7 @@ This program showcases basic object-oriented principles in Java: defining classe
 ---
 
 ---
-
+### ***3***:
 ### **Code Explanation Step-by-Step**
 
 #### **1. Define the Class**
@@ -194,5 +195,74 @@ true
    - The attributes `age` and `nickname` are assigned values (`19` and `"pradha"`).
    - The `hasMobile()` method is called for the `subha` object, and the result (`true`) is stored in `s`.
 
-3. Finally, the value of `s` is printed, which is `true`.
+3. Finally, the value of `s` is printed, which is `true`.---
+---
+---
+### ***4***
+### **Code **
+class Human {
+    int age;               // Attribute to store the age of the Human
+    String nickname;        // Attribute to store the nickname of the Human
+
+    // Method that takes a boolean parameter (input) and returns it
+    boolean hasMobile(boolean input) {
+        return input;       // Returns the value of the input parameter
+    }
+
+    public static void main(String[] args) {
+        // Step 1: Create an object of the Human class
+        Human subha = new Human();
+        
+        // Step 2: Assign values to the object's attributes
+        subha.age = 19;        // Set the age attribute to 19
+        subha.nickname = "pradha";  // Set the nickname attribute to "pradha"
+        
+        // Step 3: Call the hasMobile method and pass `true` as the argument
+        boolean s = subha.hasMobile(true);  // This will return true
+        
+        // Step 4: Print the result of the hasMobile method
+        System.out.println(s);  // Output: true
+    }
+}
+
+
+1. **Class Definition**:
+   - `class Human`: A blueprint for creating objects with attributes (`age`, `nickname`) and a method (`hasMobile`).
+
+2. **Attributes**:
+   - `int age`: Stores the age of the person.
+   - `String nickname`: Stores the nickname of the person.
+
+3. **Method**:
+   - `boolean hasMobile(boolean input)`: Takes a boolean (`input`) as a parameter and returns it.
+
+4. **Main Method**:
+   - **Step 1**: Create an object:
+     ```java
+     Human subha = new Human();
+     ```
+     - Creates an object `subha` of the `Human` class.
+   - **Step 2**: Assign values:
+     ```java
+     subha.age = 19;
+     subha.nickname = "pradha";
+     ```
+     - Sets `age` to 19 and `nickname` to "pradha" for `subha`.
+   - **Step 3**: Call the method:
+     ```java
+     boolean s = subha.hasMobile(true);
+     ```
+     - Calls `hasMobile` with `true` as the argument. `input` inside the method gets the value `true`, and the method returns `true`.
+   - **Step 4**: Print the result:
+     ```java
+     System.out.println(s);
+     ```
+     - Prints `true`.
+
+---
+
+### **Output**:
+```
+true
+```
 
