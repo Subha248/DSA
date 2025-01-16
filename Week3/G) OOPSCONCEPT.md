@@ -200,6 +200,7 @@ true
 ---
 ### ***4***
 ### **Code **
+```java
 class Human {
     int age;               // Attribute to store the age of the Human
     String nickname;        // Attribute to store the nickname of the Human
@@ -224,7 +225,7 @@ class Human {
         System.out.println(s);  // Output: true
     }
 }
-
+---
 
 1. **Class Definition**:
    - `class Human`: A blueprint for creating objects with attributes (`age`, `nickname`) and a method (`hasMobile`).
