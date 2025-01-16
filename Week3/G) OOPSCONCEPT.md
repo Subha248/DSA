@@ -82,3 +82,117 @@ class Human {
 ---
 
 This program showcases basic object-oriented principles in Java: defining classes, creating objects, and accessing object attributes. 
+---
+
+---
+
+### **Code Explanation Step-by-Step**
+
+#### **1. Define the Class**
+```java
+class Human {
+    int age;          // Attribute to store the age of a Human
+    String nickname;  // Attribute to store the nickname of a Human
+
+    // Method to check if the person has a mobile phone
+    boolean hasMobile() {
+        return true;  // Always returns `true` for now
+    }
+}
+```
+- **`Human` Class**:
+  - This is a blueprint for creating objects.
+  - It has two properties (`age` and `nickname`) and one behavior (the `hasMobile()` method).
+
+---
+
+#### **2. Define the `main` Method**
+```java
+public static void main(String[] args) {
+    // Step 1: Create an object of the Human class
+    Human subha = new Human();
+```
+- The `main` method is the entry point of the program where execution starts.
+- `Human subha = new Human();`:
+  - Creates an object of the `Human` class named `subha`.
+  - This object will have its own `age`, `nickname`, and the ability to call the `hasMobile()` method.
+
+---
+
+#### **3. Assign Values to the Object**
+```java
+subha.age = 19;        // Assigns the age attribute of the object `subha` to 19
+subha.nickname = "pradha";  // Assigns the nickname attribute of the object `subha` to "pradha"
+```
+- Now, the `subha` object has:
+  - `age = 19`
+  - `nickname = "pradha"`
+
+---
+
+#### **4. Call the `hasMobile` Method**
+```java
+boolean s = subha.hasMobile();  // Calls the `hasMobile` method for the `subha` object
+```
+- The `hasMobile()` method is called on the `subha` object.
+- The method **always returns `true`**, so `s` will now hold the value `true`.
+
+---
+
+#### **5. Print the Result**
+```java
+System.out.println(s);  // Prints the value of `s`, which is `true`
+```
+- The value of `s` (which is `true`) is printed to the console.
+
+---
+
+### **Complete Program**
+```java
+class Human {
+    int age;
+    String nickname;
+
+    boolean hasMobile() {
+        return true;  // This method always returns `true`
+    }
+
+    public static void main(String[] args) {
+        // Step 1: Create an object of the Human class
+        Human subha = new Human();
+
+        // Step 2: Assign values to the object's attributes
+        subha.age = 19;
+        subha.nickname = "pradha";
+
+        // Step 3: Call the `hasMobile` method and store the result
+        boolean s = subha.hasMobile();
+
+        // Step 4: Print the result of the `hasMobile` method
+        System.out.println(s);  // Output: true
+    }
+}
+```
+
+---
+
+### **Output**
+When you run the program, the output will be:
+```
+true
+```
+
+---
+
+### **Step-by-Step Summary**
+1. A `Human` class is defined with:
+   - Two attributes: `age` and `nickname`.
+   - One method: `hasMobile()`, which always returns `true`.
+
+2. In the `main` method:
+   - An object of the `Human` class is created (`subha`).
+   - The attributes `age` and `nickname` are assigned values (`19` and `"pradha"`).
+   - The `hasMobile()` method is called for the `subha` object, and the result (`true`) is stored in `s`.
+
+3. Finally, the value of `s` is printed, which is `true`.
+
