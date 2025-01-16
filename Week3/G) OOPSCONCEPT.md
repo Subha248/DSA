@@ -225,8 +225,8 @@ class Human {
         System.out.println(s);  // Output: true
     }
 }
+```
 ---
-
 1. **Class Definition**:
    - `class Human`: A blueprint for creating objects with attributes (`age`, `nickname`) and a method (`hasMobile`).
 
