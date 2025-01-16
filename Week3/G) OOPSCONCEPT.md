@@ -266,4 +266,55 @@ class Human {
 ```
 true
 ```
+---
+###***5***###
+---
+
+### **Program**
+```java
+class Human {
+    int age;
+    String nickname;
+
+    // Method that returns the value of the boolean parameter
+    boolean hasMobile(boolean input) {
+        return input;
+    }
+
+    public static void main(String[] args) {
+        // Step 1: Create an object of the Human class
+        Human subha = new Human();
+
+        // Step 2: Assign values to the object's attributes
+        subha.age = 19;
+        subha.nickname = "pradha";
+
+        // Step 3: Newly added part - create a variable and call the method
+        boolean yo = true;  // Create a variable `yo` and assign it the value `true`
+        boolean s = subha.hasMobile(yo);  // Call the `hasMobile` method with `yo` as an argument
+
+        // Step 4: Print the returned value
+        System.out.println(s);  // Output: true
+    }
+}
+```
+
+---
+
+### **Newly Added Part Explained**
+1. **`boolean yo = true;`**:
+   - Creates a variable `yo` and assigns it the value `true`.
+
+2. **`boolean s = subha.hasMobile(yo);`**:
+   - Calls the `hasMobile` method, passing `yo` as an argument.
+   - The value of `yo` (`true`) is assigned to the parameter `input` in the method.
+   - The method returns `input` (`true`), which is stored in `s`.
+
+---
+
+### **Output**
+```
+true
+```
+
 
