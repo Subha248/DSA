@@ -32,8 +32,101 @@ class Human {
 
 ---
 ---
+### **Demonstrating Two Methods**
 
-###**2:**
+---
+
+### **Code Explanation**
+
+#### **1. Class Definition**
+```java
+class Human {
+    int age;               // Attribute for the age of the Human
+    String nickname;        // Attribute for the nickname of the Human
+```
+- `Human` is the class, and it contains two attributes: `age` (integer) and `nickname` (string).
+
+#### **2. First Method: `hasMobile`**
+```java
+boolean hasMobile(boolean a, int b) {
+    System.out.println(b);  // Prints the integer value (b)
+    return a;               // Returns the boolean value (a)
+}
+```
+- This method takes two arguments: a boolean (`a`) and an integer (`b`).
+- It prints the value of `b` and returns the value of `a`.
+
+#### **3. Second Method: `futureAge`**
+```java
+int futureAge(int sub) {
+    return sub;  // Returns the value passed as the argument
+}
+```
+- This method takes one argument (`sub`) and returns it directly.
+- You pass `subha.age + 5` as an argument when you call this method, so it calculates the age 5 years later.
+
+#### **4. Main Method**
+```java
+public static void main(String[] args) {
+    // Step 1: Create an object of the Human class
+    Human subha = new Human();
+
+    // Step 2: Set attributes
+    subha.age = 15;
+    subha.nickname = "pradha";
+
+    // Step 3: Print attributes
+    System.out.println(subha.age);       // Output: 15
+    System.out.println(subha.nickname);  // Output: pradha
+
+    // Step 4: Call hasMobile method
+    boolean m = subha.hasMobile(true, 19);  // Prints 19 and returns true
+    System.out.println(m);                  // Output: true
+
+    // Step 5: Call futureAge method
+    int damn = subha.futureAge(subha.age + 5);  // Calculates 15 + 5 = 20
+    System.out.println(damn);                   // Output: 20
+}
+```
+
+---
+
+### **Output**
+
+When you run the program, the output will be:
+```
+15
+pradha
+19
+true
+20
+```
+
+---
+
+### **Step-by-Step Program Flow**
+1. Create an object `subha` of the `Human` class.
+2. Assign values to `age` (`15`) and `nickname` (`"pradha"`).
+3. Print the `age` and `nickname`.
+4. Call the `hasMobile` method:
+   - Pass `true` and `19` as arguments.
+   - It prints `19` and returns `true`.
+5. Call the `futureAge` method:
+   - Pass `subha.age + 5` (15 + 5 = 20).
+   - It returns `20`, which is then printed.
+
+---
+
+### **Key Points**
+- You successfully created and used **two methods** in one class:
+  - `hasMobile`: Prints and returns values.
+  - `futureAge`: Calculates and returns a future age.
+- Your program demonstrates how to call methods with arguments and process their results.
+
+---
+
+
+### **2:**
 
 No, you **cannot use `return a, b`** in Java. A method in Java can only return **one value**, and the type of that value must match the method’s declared return type. Here’s why and how you can handle this limitation:
 
@@ -131,57 +224,5 @@ System.out.println("Mobile Count: " + result.mobileCount);
    - Combine values into a `String`.
    - Use a custom class to store and return multiple values.
 
-Let me know if you'd like further clarification! 😊
 
 
-###**3:**
-
-### **Do All Methods Need a `return`?**
-No, not all methods in Java need a `return` statement. It depends on the method's **return type**.
-
----
-
-### **1. Methods That Must Have `return`**
-- If a method has a **non-void return type** (e.g., `int`, `boolean`, `String`), it **must return a value** of that type.
-
-#### Example:
-```java
-int add(int a, int b) {
-    return a + b;  // Returns an integer
-}
-
-boolean isAdult(int age) {
-    return age >= 18;  // Returns a boolean
-}
-```
-
----
-
-### **2. Methods That Don’t Need `return`**
-- Methods with a **void return type** don’t need a `return` statement. They are used for actions like printing or updating.
-
-#### Example:
-```java
-void greet(String name) {
-    System.out.println("Hello, " + name);  // No return needed
-}
-```
-
-- **Optional Early Exit**:
-  - A `void` method can use `return;` to exit early.
-  ```java
-  void checkAge(int age) {
-      if (age < 18) {
-          System.out.println("Too young.");
-          return;  // Exits early
-      }
-      System.out.println("Welcome!");
-  }
-  ```
-
----
-
-### **Key Rule**
-- **Void Methods**: Don’t require `return`.
-- **Non-Void Methods**: Must have a `return` statement with a value matching the return type.
-### ** EXAMPLE PROGRAM**
