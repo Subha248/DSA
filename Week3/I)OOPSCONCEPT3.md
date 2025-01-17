@@ -50,7 +50,51 @@ void greet(String name) {
 - **Non-Void Methods**: Must have a `return` statement with a value matching the return type.
   ---
   
-### ** EXAMPLE PROGRAM**
+### *** EXAMPLE PROGRAM***
+Got it! Here's the explanation with **separate programs** for non-void and void methods, just as you provided.
+
+---
+
+### **Non-Void Method Example**
+```java
+class Human {
+    // Non-void method: returns a value
+    String baby(String name) {
+        return name; // Returns the input name
+    }
+
+    public static void main(String[] args) {
+        // Create an object of the Human class
+        Human subha = new Human();
+
+        String s = "chan";               // Input for the non-void method
+        String sub = subha.baby(s);      // Call the non-void method and store the result
+        System.out.println(sub);         // Prints the returned value
+    }
+}
+```
+
+---
+
+### **Void Method Example**
+```java
+class Human {
+    // Void method: does not return anything
+    void baby(String name) {
+        System.out.println(name); // Prints the input name
+    }
+
+    public static void main(String[] args) {
+        // Create an object of the Human class
+        Human subha = new Human();
+
+        subha.baby("chuba"); // Call the void method (directly prints the name)
+    }
+}
+```
+
+---
+
 
 ---
 
