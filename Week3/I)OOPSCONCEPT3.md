@@ -48,5 +48,99 @@ void greet(String name) {
 ### **Key Rule**
 - **Void Methods**: Don’t require `return`.
 - **Non-Void Methods**: Must have a `return` statement with a value matching the return type.
-- 
+  ---
+  
 ### ** EXAMPLE PROGRAM**
+
+---
+
+### **Key Rule**
+1. **Void Methods**:
+   - Do not require a `return` statement.
+   - Typically used for actions like printing or updating values.
+
+2. **Non-Void Methods**:
+   - Must have a `return` statement with a value that matches their return type.
+
+---
+
+### **Example Program Explanation**
+
+#### **1. Class `Human` Attributes**
+```java
+int age;
+String nickname;
+```
+- `age`: Stores the age of the person.
+- `nickname`: Stores the nickname of the person.
+
+---
+
+#### **2. Non-Void Method: `hasMobile(boolean a, int b)`**
+```java
+boolean hasMobile(boolean a, int b) {
+    System.out.println(b);  // Prints the integer value `b`
+    return a;               // Returns the boolean value `a`
+}
+```
+- **Return Type**: `boolean`
+- **Key Rule Applied**: This method must have a `return` statement that returns a `boolean` value. In this case, it returns `a`.
+
+---
+
+#### **3. Void Method: `futureAge(int sub)`**
+```java
+void futureAge(int sub) {
+    System.out.println(sub);  // Prints the value of `sub`
+}
+```
+- **Return Type**: `void`
+- **Key Rule Applied**: This method does not return anything, so there is no `return` statement. Instead, it prints the value of `sub`.
+
+---
+
+#### **4. Main Method**
+```java
+public static void main(String[] args) {
+    // Create an object
+    Human subha = new Human();
+    subha.age = 15;
+    subha.nickname = "pradha";
+
+    // Print attributes
+    System.out.println(subha.age);       // Prints: 15
+    System.out.println(subha.nickname);  // Prints: pradha
+
+    // Call non-void method
+    boolean m = subha.hasMobile(true, 19);  // Prints: 19 and returns: true
+    System.out.println(m);                  // Prints: true
+
+    // Call void method
+    subha.futureAge(subha.age + 5);         // Prints: 20
+}
+```
+
+---
+
+### **Output**
+When you run this program, the output will be:
+```
+15
+pradha
+19
+true
+20
+```
+
+---
+
+### **How This Example Matches the Key Rule**
+1. **Non-Void Method**:
+   - `hasMobile` has a `boolean` return type and must return a `boolean` value. It follows the rule by returning `a`.
+
+2. **Void Method**:
+   - `futureAge` has a `void` return type, so it doesn't return anything. It follows the rule by printing a value instead.
+
+---
+
+This program is an excellent example for understanding the difference between `void` and non-`void` methods.
