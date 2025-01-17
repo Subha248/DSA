@@ -141,6 +141,87 @@ true
 2. **Void Method**:
    - `futureAge` has a `void` return type, so it doesn't return anything. It follows the rule by printing a value instead.
 
----
+
 
 This program is an excellent example for understanding the difference between `void` and non-`void` methods.
+---
+---
+### **4:**
+### **Program: Demonstrating Static Method Usage in Java**
+
+---
+
+### **Program: Using Static Method in Java**
+
+```java
+class Human {
+    // Static method: can be called without creating an object
+    static String baby(String chan) {
+        return chan;  // Returns the string passed as an argument
+    }
+
+    public static void main(String[] args) {
+        // Call the static method directly using the class name
+        String s = Human.baby("baby chan");
+        System.out.println(s);  // Prints the returned string
+    }
+}
+```
+
+---
+
+### **Explanation**
+
+1. **Static Method `baby`**:
+   - The method `baby` is declared as `static`:
+     ```java
+     static String baby(String chan)
+     ```
+   - This means it belongs to the class and can be called directly without creating an object of the `Human` class.
+   - The method takes a `String` parameter (`chan`) and returns it.
+
+2. **Main Method**:
+   - The `main` method is the entry point of the program:
+     ```java
+     public static void main(String[] args)
+     ```
+   - Inside the `main` method:
+     - The static method `baby` is called directly using the class name `Human`:
+       ```java
+       String s = Human.baby("baby chan");
+       ```
+     - The value `"baby chan"` is passed to the `baby` method.
+     - The method returns `"baby chan"`, which is stored in the variable `s`.
+
+3. **Output**:
+   - The `System.out.println(s);` line prints the value of `s`:
+     ```
+     baby chan
+     ```
+
+---
+
+### **Key Points**
+- **Static Method**: 
+  - Declared using the `static` keyword.
+  - Can be called directly using the class name without creating an object.
+- **Method Arguments**: 
+  - The string `"baby chan"` is passed as an argument to the `baby` method.
+  - The method returns the same string, which is then printed.
+
+---
+
+### **Output**
+When you run the program, the output will be:
+```
+baby chan
+```
+
+---
+
+### **Why This Code Is Useful**
+- Demonstrates how to use **static methods** in Java.
+- Shows how to pass arguments to a method and return a value.
+
+
+
