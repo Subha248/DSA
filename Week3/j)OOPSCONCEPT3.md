@@ -1,6 +1,4 @@
 
----
-
 ### **What Are Access Specifiers?**
 Access specifiers in Java define **who can access a class, method, or variable**. They control the visibility of members (attributes, methods, constructors) in your program.
 
@@ -11,7 +9,7 @@ There are **four main access specifiers** in Java:
 4. **(default)**: If you don’t specify any access modifier, it is accessible within the **same package** (also called "package-private").
 
 ---
-'''java
+```java
 
 // Define the Human class
 public class Human {
@@ -60,10 +58,5 @@ class Main {
 
 ---
 
-### **How It Relates to Your Code**
-In the image you shared:
-- `public int age`: The `age` variable is accessible from anywhere.
-- `String nickName`: Since no modifier is specified, it has **default** access (accessible only within the same package).
-- `boolean hasMobile(boolean input, int ds)`: Since no modifier is specified, it also has **default** access.
-- `static String getInitial()`: The `public static` method is accessible from anywhere using the class name.
+
 
