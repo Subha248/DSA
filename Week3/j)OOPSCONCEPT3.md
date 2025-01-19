@@ -44,7 +44,11 @@ class Main {
                          // Output will be: Age: 25
     }
 }
-'''
+```
+
+Output of the Program:
+
+Age: 25
 
 ---
 
