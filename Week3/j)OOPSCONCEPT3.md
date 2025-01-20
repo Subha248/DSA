@@ -52,6 +52,69 @@ Age: 25
 
 ---
 
+### 2) **Java Encapsulation with Private Variables**
+```java
+// Define the Human class
+class Human {
+    // Private variable to store the age of a human
+    private int age;
+
+    // Public setter method to set the value of the private age variable
+    public void setAge(int a) {
+        // Assign the parameter value 'a' to the private variable 'age'
+        age = a;
+    }
+
+    // Public getter method to get the value of the private age variable
+    public int getAge() {
+        // Return the value of the private variable 'age'
+        return age;
+    }
+}
+
+// Define the Main class
+public class Main {
+    public static void main(String[] args) {
+        // Create an object of the Human class
+        Human human = new Human();
+
+        // Use the setter method to set the age of the human object
+        human.setAge(30); // Setting the private variable 'age' to 30
+
+        // Use the getter method to retrieve and print the age of the human object
+        System.out.println(human.getAge()); // Output: 30
+    }
+}
+```
+
+### **Explanation of the Code:**
+1. **Encapsulation**:
+   - The `age` variable is declared as `private` to restrict direct access from outside the `Human` class.
+   - Public methods (`setAge` and `getAge`) provide controlled access to the `age` variable.
+
+2. **Setter Method**:
+   - The `setAge` method takes a parameter and assigns it to the private variable `age`.
+   - It allows external classes to set the value of `age`.
+
+3. **Getter Method**:
+   - The `getAge` method returns the value of the private variable `age`.
+   - It allows external classes to retrieve the value of `age`.
+
+4. **Main Class**:
+   - An object of the `Human` class is created in the `main` method.
+   - The private variable `age` is set using the `setAge` method.
+   - The value of `age` is retrieved and printed using the `getAge` method.
+
+---
+
+
+  ### Output:
+  ```
+  30
+  ```
+  
+
+
 ### **Beginner-Friendly Summary Table**
 | Access Modifier | Same Class | Same Package | Subclass (Different Package) | Other Classes (Different Package) |
 |------------------|------------|--------------|-------------------------------|------------------------------------|
