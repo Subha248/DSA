@@ -267,5 +267,51 @@ baby chan
 - Demonstrates how to use **static methods** in Java.
 - Shows how to pass arguments to a method and return a value.
 
+### ** EXAMPLE PROGRAM **
+``` java
+public class Human{
+  int age;
+  String nickname;
+  //method
+  boolean ran(boolean input,int a){
+   System.out.println(a);
+  return input;
+  }
+  //another method
+  int future(int dd){
+    return dd;
+  }
+  // void method
+  void vovo(String kaka){
+    System.out.println(kaka);
+  }
+  public static void main (String[] args){
+    // Object
+    Human subha =new Human();
+    subha.age=20;
+    subha.nickname="ss";
+   
+    System.out.println(subha.age);
+      System.out.println(subha.nickname);
+      
+         //call method  
+         boolean y=subha.ran(true,77);
+         //call another method
+         int v=subha.future(subha.age+5);
+         //call void mehtod
+         subha.vovo("soso");
 
-
+            System.out.println(y);
+             System.out.println(v);
+      
+     
+  }
+}
+```
+### OUTPUT:
+20
+ss
+77
+soso
+true
+25
