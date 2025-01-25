@@ -199,7 +199,7 @@ not a prime
 ```
 a prime
 ```
-
+---
 ---
 
 ### **Explanation of Table Columns**
