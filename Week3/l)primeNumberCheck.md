@@ -203,12 +203,12 @@ a prime
 ---
 
 ### **Explanation of Table Columns**
-
+```
 1. **Step**: Represents the sequence of operations in the program.
 2. **\( i \) (Current Divisor)**: The number being checked as a possible divisor of \( n \).
 3. **\( i \times i \leq n \)?**: Verifies if the loop condition holds (whether \( i \times i \) is still less than or equal to \( n \)).
 4. **\( n \% i == 0 \)?**: Checks if \( n \) is divisible by \( i \).
 5. **Action**: What the program does at that step (e.g., continue, print output, or exit).
-
+```
 ---
 
