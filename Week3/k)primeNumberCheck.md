@@ -140,3 +140,103 @@ not a prime
 
 ---
 
+
+---
+
+### **Why Only Check Up to the Square Root?**
+
+1. **Divisors Come in Pairs:**
+   - Every number \( n \) can be expressed as a product of two factors: \( a \times b = n \).
+   - If \( a \leq \sqrt{n} \), then \( b \geq \sqrt{n} \), and vice versa.
+
+   Example:
+   - \( n = 36 \):
+     - Divisor pairs: \( (1, 36), (2, 18), (3, 12), (4, 9), (6, 6) \).
+     - Once you’ve checked up to \( \sqrt{36} = 6 \), you’ve effectively checked all possible divisors.
+
+2. **No Need to Check Larger Factors:**
+   - If a number \( n \) is divisible by any number greater than \( \sqrt{n} \), the corresponding smaller factor would already have been checked.
+
+   Example:
+   - For \( n = 36 \), if you check \( 9 \), you’ll already know that \( 36 \div 9 = 4 \), and \( 4 \) was checked earlier.
+
+3. **Efficiency:**
+   - By only checking up to \( \sqrt{n} \), you drastically reduce the number of checks needed.
+   - Instead of checking all numbers from \( 2 \) to \( n-1 \), you only check up to \( \sqrt{n} \).
+
+---
+
+### **What Does the Program Do?**
+
+1. It loops from \( i = 2 \) to \( i \times i \leq n \) (i.e., up to \( \sqrt{n} \)).
+2. For each \( i \), it checks if \( n \% i == 0 \):
+   - If true, \( n \) is divisible by \( i \), so it’s **not prime**.
+   - If no such \( i \) is found, \( n \) is **prime**.
+
+---
+
+### **Why Multiplying Instead of Taking Square Root?**
+
+In the loop condition:
+```java
+for (int i = 2; i * i <= n; i++)
+```
+
+1. **Avoiding the Square Root Calculation:**
+   - Directly calculating \( \sqrt{n} \) (e.g., using `Math.sqrt(n)`) is computationally expensive.
+   - Instead, comparing \( i \times i \leq n \) avoids the need for floating-point arithmetic and ensures accuracy.
+
+2. **Iterative Multiplication:**
+   - \( i * i \) is checked incrementally for each \( i \), which is simpler and efficient for this purpose.
+
+---
+
+### **Example Walkthrough**
+
+Let’s analyze \( n = 36 \):
+
+#### Step 1: Start Loop
+- \( i = 2 \):  
+  \( 2 \times 2 = 4 \leq 36 \).  
+  \( 36 \% 2 == 0 \), so \( n \) is **not prime**.
+
+#### Step 2: Check Smaller \( n \) (e.g., \( n = 37 \)):
+- \( i = 2 \):  
+  \( 2 \times 2 = 4 \leq 37 \).  
+  \( 37 \% 2 \neq 0 \), continue.
+
+- \( i = 3 \):  
+  \( 3 \times 3 = 9 \leq 37 \).  
+  \( 37 \% 3 \neq 0 \), continue.
+
+- \( i = 4 \):  
+  \( 4 \times 4 = 16 \leq 37 \).  
+  \( 37 \% 4 \neq 0 \), continue.
+
+- \( i = 5 \):  
+  \( 5 \times 5 = 25 \leq 37 \).  
+  \( 37 \% 5 \neq 0 \), continue.
+
+- \( i = 6 \):  
+  \( 6 \times 6 = 36 \leq 37 \).  
+  \( 37 \% 6 \neq 0 \), continue.
+
+- \( i = 7 \):  
+  \( 7 \times 7 = 49 > 37 \). Exit loop.
+
+Since no divisors were found, \( n = 37 \) is **prime**.
+
+---
+
+### **Key Points**
+
+1. **Why Check Up to \( \sqrt{n} \):**
+   - Divisors come in pairs (\( a, b \)), and one of them is always \( \leq \sqrt{n} \).
+
+2. **Why Use \( i \times i \):**
+   - Avoids unnecessary computation of \( \sqrt{n} \).
+   - Simple integer comparison, avoiding floating-point inaccuracies.
+
+3. **Efficient Prime Check:**
+   - Instead of looping through all numbers up to \( n \), only loop up to \( \sqrt{n} \).
+
