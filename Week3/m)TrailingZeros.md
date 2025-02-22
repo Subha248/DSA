@@ -1,120 +1,91 @@
 
----
+### **Problem:**
+Find how many zeros are at the **end** of \( N! \) (factorial of \( N \)).
 
-### **Problem Statement**
-
-**Find the number of trailing zeroes in \( N! \).**
-
-- \( N! \) (factorial of \( N \)) is the product of all integers from 1 to \( N \).  
-- Trailing zeroes in \( N! \) are caused by factors of \( 10 = 2 \times 5 \).  
-- Since there are always more factors of \( 2 \) than \( 5 \), the number of trailing zeroes is determined by the number of factors of \( 5 \).
+- \( N! \) is the product of all numbers from 1 to \( N \).
+- Trailing zeros are created by multiplying **2** and **5** (since \( 2 \times 5 = 10 \)).
+- In \( N! \), there are **always more 2s than 5s**, so we only need to count the number of **5s**.
 
 ---
 
-### **Program**
+### **Solution:**
+To count the trailing zeros:
+1. Count how many multiples of **5** are in \( N! \).
+2. Count how many multiples of **25** (since \( 25 = 5 \times 5 \)) are in \( N! \).
+3. Count how many multiples of **125** (since \( 125 = 5 \times 5 \times 5 \)) are in \( N! \).
+4. Keep going for higher powers of 5 (e.g., 625, 3125, etc.) until the power exceeds \( N \).
 
-Here’s the complete program:
+Finally, add up all these counts to get the total number of trailing zeros.
+
+---
+
+### **Example:**
+Let’s say \( N = 100 \):
+1. Count multiples of **5**: \( 100 / 5 = 20 \).
+2. Count multiples of **25**: \( 100 / 25 = 4 \).
+3. Count multiples of **125**: \( 100 / 125 = 0 \) (since 125 > 100).
+
+Total trailing zeros = \( 20 + 4 + 0 = 24 \).
+
+So, \( 100! \) has **24 trailing zeros**.
+
+---
+
+### **Program:**
+Here’s the Java program to do this:
 
 ```java
 class Solution {
     public int trailingZeroes(int N) {
-        int count = 0; // Initialize the count of trailing zeroes
+        int count = 0; // Initialize the count of trailing zeros
 
         // Count factors of 5, 25, 125, ...
         for (int i = 5; i <= N; i *= 5) {
             count += N / i; // Add the number of multiples of i (current power of 5)
         }
 
-        return count; // Return the total trailing zeroes
+        return count; // Return the total trailing zeros
     }
 }
 ```
 
 ---
 
-### **Explanation of the Code**
-
-1. **Initialization:**
-   - We initialize `count = 0` to store the number of trailing zeroes.
-   
-2. **Iterative Loop:**
-   - The loop starts with `i = 5` (the first power of 5) and multiplies \( i \) by 5 in each step to check higher powers of \( 5 \) (e.g., \( 5, 25, 125, \dots \)).
-   - In each iteration:
-     - \( N / i \): Counts how many numbers in \( 1 \) to \( N \) are divisible by \( i \).
-     - Add this to `count`.
-
-3. **Stopping Condition:**
-   - The loop stops when \( i > N \) because there are no more multiples of \( i \) within \( N \).
-
-4. **Return the Result:**
-   - Finally, the function returns `count`, which holds the total number of trailing zeroes in \( N! \).
+### **How It Works:**
+1. Start with \( i = 5 \) (the smallest power of 5).
+2. Divide \( N \) by \( i \) to count how many multiples of \( i \) are in \( N! \).
+3. Multiply \( i \) by 5 to check the next power of 5 (e.g., 25, 125, etc.).
+4. Repeat until \( i \) exceeds \( N \).
+5. Add up all the counts to get the total trailing zeros.
 
 ---
 
-### **How It Works**
-
-Let’s go through an example.
-
-#### Example: \( N = 100 \)
-
-1. **First Power of 5 (\( i = 5 \)):**
-   - \( 100 / 5 = 20 \): There are 20 numbers divisible by \( 5 \) (e.g., \( 5, 10, 15, ..., 100 \)).
-   - These contribute 20 factors of \( 5 \).
-
-2. **Second Power of 5 (\( i = 25 \)):**
-   - \( 100 / 25 = 4 \): There are 4 numbers divisible by \( 25 \) (e.g., \( 25, 50, 75, 100 \)).
-   - These contribute 4 extra factors of \( 5 \).
-
-3. **Third Power of 5 (\( i = 125 \)):**
-   - \( 100 / 125 = 0 \): There are no numbers divisible by \( 125 \) in \( 1 \) to \( 100 \).
-
-#### Total Trailing Zeroes:
-- \( 20 + 4 + 0 = 24 \).
-
-So, \( 100! \) has **24 trailing zeroes**.
+### **Key Points:**
+1. Trailing zeros come from **factors of 10** (\( 2 \times 5 \)).
+2. There are always more **2s** than **5s**, so we only count **5s**.
+3. The formula is:  
+   \( \text{Trailing zeros} = N/5 + N/25 + N/125 + \dots \)
 
 ---
 
-### **Output for Different Inputs**
+### **Example Table for \( N = 100 \):**
 
-| **Input \( N \)** | **Calculation**                 | **Trailing Zeroes** |
-|--------------------|---------------------------------|---------------------|
-| \( N = 10 \)       | \( 10/5 = 2 \)                 | \( 2 \)             |
-| \( N = 25 \)       | \( 25/5 = 5, 25/25 = 1 \)      | \( 6 \)             |
-| \( N = 50 \)       | \( 50/5 = 10, 50/25 = 2 \)     | \( 12 \)            |
-| \( N = 100 \)      | \( 100/5 = 20, 100/25 = 4 \)   | \( 24 \)            |
+| **Power of 5** | **Calculation** | **Count Added** | **Total Trailing Zeros** |
+|----------------|-----------------|-----------------|--------------------------|
+| \( 5 \)        | \( 100 / 5 = 20 \) | 20              | 20                       |
+| \( 25 \)       | \( 100 / 25 = 4 \) | 4               | 24                       |
+| \( 125 \)      | \( 100 / 125 = 0 \) | 0               | 24                       |
 
----
-
-### **Complexity Analysis**
-
-1. **Time Complexity: \( O(\log_5 N) \):**
-   - The loop runs for each power of \( 5 \) (e.g., \( 5, 25, 125 \)), which grows logarithmically.
-   
-2. **Space Complexity: \( O(1) \):**
-   - Only a single variable `count` is used.
+**Final Answer:** \( 100! \) has **24 trailing zeros**.
 
 ---
 
-### **Table Visualization**
-
-Here’s how the program processes \( N = 100 \):
-
-| **Step** | **Power of 5 (\( i \))** | **Numbers Divisible by \( i \)** | **Count Added** | **Cumulative Total** |
-|----------|---------------------------|----------------------------------|-----------------|-----------------------|
-| 1        | \( 5 \)                  | \( 5, 10, 15, ..., 100 \)       | \( 100 / 5 = 20 \) | \( 20 \)             |
-| 2        | \( 25 \)                 | \( 25, 50, 75, 100 \)           | \( 100 / 25 = 4 \) | \( 24 \)             |
-| 3        | \( 125 \)                | None                            | \( 100 / 125 = 0 \) | \( 24 \)             |
-
-**Final Output:** \( 24 \)
+### **Time Complexity:**
+The loop runs for each power of 5, so it’s very efficient: \( O(\log_5 N) \).
 
 ---
 
-### **Key Points**
-
-1. Trailing zeroes come from factors of \( 10 = 2 \times 5 \).
-2. Factors of \( 2 \) are abundant in \( N! \), so we only count factors of \( 5 \).
-3. The total number of trailing zeroes is calculated as \( N/5 + N/25 + N/125 + \dots \).
-
----
-
+### **Summary:**
+- Count the number of **5s** in \( N! \) by dividing \( N \) by powers of 5.
+- Add them up to get the total trailing zeros.
+- The program does this quickly and efficiently!
