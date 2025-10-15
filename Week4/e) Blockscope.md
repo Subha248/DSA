@@ -1,10 +1,10 @@
+
+
 ---
-
-
 
 ```java
 // 🌸 BlockScopeDemo.java
-// Demonstrates how variable scope works inside and outside blocks in Java
+// 🧩 Java Scope Demo – Shows how variable scope works inside and outside blocks
 
 public class BlockScopeDemo {
     public static void main(String[] args) {
@@ -55,13 +55,15 @@ Inside block - b: 50
 
 ### 🧠 **Summary:**
 
-* Variables declared **outside** the block remain accessible *inside*.
-* If you **modify** them inside, changes persist *outside*.
-* Variables declared **inside** a block vanish once the block ends.
+* Variables declared **outside** a block remain accessible *inside*.
+* Modifying them inside a block **changes their values outside** as well.
+* Variables declared **inside a block** disappear once the block ends (out of scope).
 
 ---
 
-Would you like me to make a **GitHub-style short description + tags** (like the summary line you can add at the top of the README or repo)?
-Example:
+### 📌 **GitHub-style short description / tag:**
 
 > “🧩 Java Scope Demo – Shows how variable shadowing and block scoping work inside methods.”
+
+---
+
