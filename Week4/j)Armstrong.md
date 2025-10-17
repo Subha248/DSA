@@ -1,6 +1,48 @@
 
 ---
 
+## ✅ Final Code (Copy-Paste Ready)
+
+```java
+// 💫 Armstrong Number Checker
+// A number is Armstrong if the sum of cubes of its digits equals the number itself
+// Example: 153 → 1³ + 5³ + 3³ = 153 ✅
+
+import java.util.*;
+public class ArmstrongCheck {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+
+    System.out.print("Enter a number: ");
+    int n = sc.nextInt();
+
+    boolean ans = isArmstrong(n);
+    System.out.println("Is Armstrong? " + ans);
+  }
+
+  // 🌸 Method to check if a number is Armstrong
+  static boolean isArmstrong(int n) {
+    int original = n;   // store the original number
+    int sum = 0;        // to hold the sum of cubes of digits
+
+    // extract each digit one by one
+    while (n > 0) {
+      int rem = n % 10;            // get last digit
+      sum = sum + rem * rem * rem; // add its cube to sum
+      n = n / 10;                  // remove last digit
+    }
+
+    // check if the sum equals the original number
+    return sum == original;
+  }
+}
+```
+
+---
+
+
+---
+
 ### Example Run:
 
 **Input:**
@@ -59,7 +101,7 @@ Is Armstrong? false
 ---
 
 ---
-
+**2**
 ## GitHub-Ready Code
 
 ```java
