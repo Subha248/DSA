@@ -58,3 +58,58 @@ Is Armstrong? false
 
 ---
 
+---
+
+## GitHub-Ready Code
+
+```java
+// 💫 Armstrong Numbers (3-Digit) Finder
+// This program prints all 3-digit Armstrong numbers (100 to 999)
+// Example: 153 → 1³ + 5³ + 3³ = 153 ✅
+
+import java.util.*;
+
+public class ArmstrongNumbers {
+    public static void main(String[] args) {
+        System.out.println("3-digit Armstrong numbers:");
+
+        // Loop through all 3-digit numbers
+        for (int i = 100; i < 1000; i++) {
+            if (isArmstrong(i)) {           // Check if number is Armstrong
+                System.out.print(i + " ");  // Print if true
+            }
+        }
+    }
+
+    // 🌸 Method to check if a number is Armstrong
+    static boolean isArmstrong(int n) {
+        int original = n;   // store original number
+        int sum = 0;        // sum of cubes of digits
+
+        // calculate sum of cubes of each digit
+        while (n > 0) {
+            int rem = n % 10;           // get last digit
+            sum += rem * rem * rem;     // add cube to sum
+            n /= 10;                     // remove last digit
+        }
+
+        // compare sum with original number
+        return sum == original;
+    }
+}
+```
+
+---
+
+### ✨ Sample Output (when run)
+
+```
+3-digit Armstrong numbers:
+153 370 371 407
+```
+
+---
+
+
+---
+
