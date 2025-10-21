@@ -73,3 +73,72 @@ public class Demo {
 ---
 
 
+---
+
+```java
+// 🌸 Array Input and Print Example
+// This program takes 'n' numbers from the user and prints the array using Arrays.toString()
+
+import java.util.*;
+
+public class Demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // 1️⃣ Take size of the array
+        int n = sc.nextInt();
+        int[] arr = new int[n];  // create array of size n
+
+        // 2️⃣ Input values into the array
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // 3️⃣ Print array as string
+        System.out.println(Arrays.toString(arr));
+    }
+}
+```
+
+---
+
+### 📘 Notes for Revision
+
+* `int[] arr = new int[n];` → creates an array of size `n`
+* `arr[i] = sc.nextInt();` → stores user input in the array
+* `Arrays.toString(arr)` → prints the array in a readable format like `[10, 20, 30, 40]`
+
+---
+
+### 🔹 Example Input & Output
+
+**Input:**
+
+```
+5
+10 20 30 40 50
+```
+
+**Output:**
+
+```
+[10, 20, 30, 40, 50]
+```
+
+**Input:**
+
+```
+3
+1 2 3
+```
+
+**Output:**
+
+```
+[1, 2, 3]
+```
+
+---
+
+
+
