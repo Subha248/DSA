@@ -141,4 +141,136 @@ public class Demo {
 ---
 
 
+---
+
+### ✅ Your final code:
+
+```java
+import java.util.*;
+
+public class demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String[] str = new String[n];
+
+        for (int i = 0; i < n; i++) {
+            str[i] = sc.next();
+        }
+
+        System.out.println(Arrays.toString(str)); 
+        str[1] = "subh";
+        System.out.println(Arrays.toString(str)); 
+    }
+}
+```
+
+---
+
+### 🌸 Why this version works perfectly:
+
+#### 🧠 1. `sc.nextInt()` reads your number
+
+Example input:
+
+```
+3
+```
+
+Now `n = 3`.
+
+---
+
+#### 🪣 2. `sc.next()` reads **one word at a time**
+
+* `sc.next()` skips whitespace automatically (like spaces and newlines),
+  so it doesn’t have the *leftover newline problem* we had with `nextLine()` earlier.
+
+If you input:
+
+```
+apple banana cat
+```
+
+or even
+
+```
+apple
+banana
+cat
+```
+
+it works the same ✅
+
+---
+
+#### 💾 3. Loop stores each string inside the array
+
+After the loop:
+
+```
+str = [apple, banana, cat]
+```
+
+---
+
+#### 🖨️ 4. Printing with `Arrays.toString(str)`
+
+This nicely prints the array as:
+
+```
+[apple, banana, cat]
+```
+
+Then you change one element:
+
+```java
+str[1] = "subh";
+```
+
+and print again:
+
+```
+[apple, subh, cat]
+```
+
+---
+
+### ⚠️ Just one tiny safety tip:
+
+If `n` might be `1`, this line will cause an error:
+
+```java
+str[1] = "subh";
+```
+
+because index 1 doesn’t exist in a 1-element array.
+
+You can fix it easily:
+
+```java
+if (n > 1) {
+    str[1] = "subh";
+}
+```
+
+---
+
+### 💡 Final Example:
+
+**Input:**
+
+```
+3
+apple banana cat
+```
+
+**Output:**
+
+```
+[apple, banana, cat]
+[apple, subh, cat]
+```
+
+---
 
