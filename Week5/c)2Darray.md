@@ -199,4 +199,80 @@ arr[2][0]  arr[2][1]   --> third row
 * Inner loop → moves **across the columns in that row**
 
 ---
+Absolutely! Let’s give you a **clean, fully corrected, and GitHub-ready version** of your 2D array program using your `Arrays.toString()` approach. I’ll also make it **properly formatted** and **commented**, so it’s easy to revise later.
+
+---
+
+### GitHub-Ready Code
+
+```java
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ArrayMatrix {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // 1️⃣ Input: number of rows and columns
+        System.out.print("Enter number of rows: ");
+        int n = sc.nextInt();
+        System.out.print("Enter number of columns: ");
+        int m = sc.nextInt();
+
+        // 2️⃣ Create a 2D array
+        int[][] demo = new int[n][m];
+
+        // 3️⃣ Input elements into the array
+        System.out.println("Enter the elements of the array:");
+        for (int r = 0; r < n; r++) {
+            for (int c = 0; c < m; c++) {
+                demo[r][c] = sc.nextInt();
+            }
+        }
+
+        // 4️⃣ Output: print each row using Arrays.toString()
+        System.out.println("The 2D array is:");
+        for (int r = 0; r < n; r++) {
+            System.out.println(Arrays.toString(demo[r]));
+        }
+
+        sc.close(); // close the scanner
+    }
+}
+```
+
+---
+
+### ✅ Example Run
+
+**Input:**
+
+```
+Enter number of rows: 2
+Enter number of columns: 3
+Enter the elements of the array:
+1 2 3
+4 5 6
+```
+
+**Output:**
+
+```
+The 2D array is:
+[1, 2, 3]
+[4, 5, 6]
+```
+
+---
+
+### Explanation for Revision
+
+1. **`demo[r][c] = sc.nextInt();`** → stores user input at row `r` and column `c`.
+2. **`Arrays.toString(demo[r])`** → converts the row array into a readable string, showing all elements in that row.
+3. **Nested loops** → outer loop goes row by row, inner loop goes column by column.
+
+---
+
+
+
 
