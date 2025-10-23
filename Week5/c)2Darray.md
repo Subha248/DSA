@@ -143,3 +143,60 @@ Your 2D array:
 ---
 
 
+---
+
+### Given:
+
+* Rows = 3
+* Columns = 2 (each row has 2 elements)
+* Array: `int[][] arr = new int[3][2];`
+
+---
+
+### How nested loops work:
+
+```java
+for (int r = 0; r < 3; r++) {        // row loop
+    for (int c = 0; c < arr[r].length; c++) {  // column loop
+        arr[r][c] = ...;  // input or print
+    }
+}
+```
+
+---
+
+### Step by Step:
+
+#### 1️⃣ First outer loop: `r = 0` (0th row)
+
+* Inner loop: `c = 0 → arr[0][0]`
+* Inner loop: `c = 1 → arr[0][1]`
+* Done with row 0 → move to next row
+
+#### 2️⃣ Second outer loop: `r = 1` (1st row)
+
+* Inner loop: `c = 0 → arr[1][0]`
+* Inner loop: `c = 1 → arr[1][1]`
+* Done with row 1 → move to next row
+
+#### 3️⃣ Third outer loop: `r = 2` (2nd row)
+
+* Inner loop: `c = 0 → arr[2][0]`
+* Inner loop: `c = 1 → arr[2][1]`
+* Done with row 2 → loops end
+
+---
+
+### ✅ Visual:
+
+```
+arr[0][0]  arr[0][1]   --> first row
+arr[1][0]  arr[1][1]   --> second row
+arr[2][0]  arr[2][1]   --> third row
+```
+
+* Outer loop → moves **down the rows**
+* Inner loop → moves **across the columns in that row**
+
+---
+
