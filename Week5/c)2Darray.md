@@ -68,9 +68,78 @@ Think like this:
    * `col = 0` → fill arr[2][0]
    * `col = 1` → fill arr[2][1]
 
-✅ Done! Every cell of the 2D array is filled.
+---
+
+---
+
+```java
+import java.util.*;  // Import Scanner for input
+
+public class Array2D {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in); // Create Scanner object
+
+        // Step 1: Take array size from user
+        System.out.print("Enter number of rows: ");
+        int rows = in.nextInt();  // Number of rows
+        System.out.print("Enter number of columns: ");
+        int cols = in.nextInt();  // Number of columns
+
+        // Step 2: Create 2D array
+        int[][] arr = new int[rows][cols];
+
+        // Step 3: Input elements
+        System.out.println("Enter array elements:");
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                arr[row][col] = in.nextInt(); // Fill each cell
+            }
+        }
+
+        // Step 4: Output the array
+        System.out.println("Your 2D array:");
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                System.out.print(arr[row][col] + " "); // Print element
+            }
+            System.out.println(); // Move to next row
+        }
+    }
+}
+```
+
+---
+
+### 💡 **Explanation**
+
+1. `rows` → number of rows
+2. `cols` → number of columns
+3. `arr[row][col]` → each cell in the 2D array
+4. **First nested loop** → takes input row by row
+5. **Second nested loop** → prints the array like a table
+
+---
+
+### ✅ **Example**
+
+**Input:**
+
+```
+Enter number of rows: 2
+Enter number of columns: 3
+Enter array elements:
+1 2 3
+4 5 6
+```
+
+**Output:**
+
+```
+Your 2D array:
+1 2 3
+4 5 6
+```
 
 ---
 
 
-Do you want me to do that?
