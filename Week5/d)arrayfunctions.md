@@ -166,3 +166,104 @@ Final list: [10, 20, 30, 40, 50]
 ---
 
 
+---
+
+```java
+import java.util.*;
+
+public class MultiAL {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Step 1: Create a big ArrayList that will hold other ArrayLists (rows)
+        ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+
+        // Step 2: Initialize 3 empty rows
+        for (int i = 0; i < 3; i++) {
+            list.add(new ArrayList<>()); // adds an empty row
+        }
+
+        // Step 3: Take input from user and fill each row
+        // Outer loop -> selects the row
+        // Inner loop -> fills numbers in that row
+        System.out.println("Enter 9 numbers (for 3x3 matrix):");
+        for (int i = 0; i < 3; i++) {          // row by row
+            for (int j = 0; j < 3; j++) {      // column by column
+                int num = sc.nextInt();         // read one number
+                list.get(i).add(num);           // add number to the i-th row
+            }
+        }
+
+        // Step 4: Print the entire 2D ArrayList
+        System.out.println("\nThe 2D ArrayList is:");
+        System.out.println(list); // prints all rows in one line
+
+        // Optional: Print row by row in a clean matrix format
+        System.out.println("\nPrinting row by row:");
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+    }
+}
+```
+
+---
+
+### 🌟 Key Points / Explanation
+
+1. **`ArrayList<ArrayList<Integer>> list = new ArrayList<>();`**
+
+   * Creates a “big list” that can hold multiple small lists (rows).
+
+2. **`list.add(new ArrayList<>());`**
+
+   * Adds an **empty row** to the big list.
+   * After 3 iterations → `[ [], [], [] ]`
+
+3. **`list.get(i)`**
+
+   * Goes to the i-th row (row 0, row 1, row 2).
+   * Doesn’t fill anything yet, just “points” to that row.
+
+4. **`list.get(i).add(num)`**
+
+   * Adds the number to the selected row.
+
+5. **Nested loops:**
+
+   * Outer loop (`i`) → chooses which row to fill.
+   * Inner loop (`j`) → fills numbers in that row.
+
+---
+
+### 🧩 Example Input & Output
+
+**Input (typed one by one or in lines):**
+
+```
+1 2 3
+4 5 6
+7 8 9
+```
+
+**Output:**
+
+```
+The 2D ArrayList is:
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+Printing row by row:
+[1, 2, 3]
+[4, 5, 6]
+[7, 8, 9]
+```
+
+✅ **Step by step:**
+
+* Row 0 → adds 1, 2, 3 → `[1, 2, 3]`
+* Row 1 → adds 4, 5, 6 → `[4, 5, 6]`
+* Row 2 → adds 7, 8, 9 → `[7, 8, 9]`
+
+---
+
+
