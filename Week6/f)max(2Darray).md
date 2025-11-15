@@ -1,6 +1,6 @@
 
 ```java
-public class MIN2D { // Define a class named MIN2D
+public class Max2D { // Define a class named MIN2D
     public static void main(String[] args) { // Main method, entry point of program
         int[][] arr = { // 2D array declaration and initialization
             {1, 2, 3},      // row 0
